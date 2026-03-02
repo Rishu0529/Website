@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>REPTREX LAMINATION'S — Premium Mobile Skins & Covers</title>
+  <meta name="description"
+    content="REPTREX LAMINATION'S — Designer Lamination's for Your Mobile delivered to your door. Premium covers, laminations & accessories in Behror, Rajasthan.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+  <style>
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box
+    }
+
+    :root {
+      --bg: #0e0e0e;
+      --bg-elevated: #1a1a1a;
+      --surface: #222222;
+      --card: #1e1e1e;
+      --border: #2e2e2e;
+      --border-hover: #3e3e3e;
+      --reptile: #32D50F;
+      --reptile-dim: #32D50F88;
+      --reptile-glow: #32D50F33;
+      --silver: #c0c0c0;
+      --silver-dim: #888;
+      --text: #e4e4e4;
+      --text-dim: #777;
+      --text-bright: #fff;
+      --danger: #ff4444;
+      --amber: #FFB020;
+      --radius: 12px;
+      --radius-hex: 6px;
+      --font-heading: 'Outfit', sans-serif;
+      --font-body: 'Space Grotesk', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth
+    }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden
+    }
+
+    a {
+      color: var(--reptile);
+      text-decoration: none
+    }
+
+    /* === HEXAGONAL CLIP PATH FOR ACCENTS === */
+    .hex-shape {
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)
+    }
+
+    /* === CARBON FIBER TEXTURE === */
+    .carbon-bg {
+      background-image:
+        linear-gradient(45deg, rgba(255, 255, 255, .02) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(255, 255, 255, .02) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, .02) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, .02) 75%);
+      background-size: 4px 4px;
+      background-position: 0 0, 0 2px, 2px -2px, -2px 0
+    }
+
+    /* ===== HEADER ===== */
+    .header {
+      background: var(--bg-elevated);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px)
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px
+    }
+
+    .brand-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--reptile);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: var(--bg);
+      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)
+    }
+
+    .brand h1 {
+      font-family: var(--font-heading);
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: var(--text-bright);
+      letter-spacing: 1.5px;
+      line-height: 1.1
+    }
+
+    .brand .tagline {
+      font-size: .6rem;
+      color: var(--text-dim);
+      font-weight: 500;
+      letter-spacing: .5px;
+      text-transform: uppercase
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 10px;
+      align-items: center
+    }
+
+    .header-cart {
+      position: relative;
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-hex);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      transition: all .25s
+    }
+
+    .header-cart:hover {
+      border-color: var(--reptile);
+      background: var(--reptile-glow)
+    }
+
+    .header-cart .badge {
+      position: absolute;
+      top: -5px;
+      right: -5px;
+      background: var(--reptile);
+      color: var(--bg);
+      font-size: .6rem;
+      font-weight: 800;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid var(--bg-elevated);
+      animation: badgePop .3s ease
+    }
+
+    @keyframes badgePop {
+      from {
+        transform: scale(0)
+      }
+
+      to {
+        transform: scale(1)
+      }
+    }
+
+    /* ===== HERO / TRUST BAR ===== */
+    .trust-bar {
+      background: var(--bg-elevated);
+      border-bottom: 1px solid var(--border);
+      overflow: hidden
+    }
+
+    .trust-bar-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 10px 16px;
+      display: flex;
+      gap: 24px;
+      align-items: center;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch
+    }
+
+    .trust-bar-inner::-webkit-scrollbar {
+      display: none
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-shrink: 0;
+      font-size: .72rem;
+      font-weight: 600;
+      color: var(--silver-dim);
+      text-transform: uppercase;
+      letter-spacing: .5px
+    }
+
+    .trust-item .ti-icon {
+      font-size: .9rem
+    }
+
+    .trust-item span {
+      color: var(--reptile);
+      font-weight: 700
+    }
+
+    /* ===== HERO BANNER ===== */
+    .hero {
+      position: relative;
+      padding: 40px 16px 32px;
+      text-align: center;
+      overflow: hidden;
+      background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg) 100%)
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, var(--reptile-glow) 0%, transparent 70%);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      animation: heroPulse 4s ease-in-out infinite alternate
+    }
+
+    @keyframes heroPulse {
+      0% {
+        opacity: .3;
+        transform: translate(-50%, -50%) scale(1)
+      }
+
+      100% {
+        opacity: .6;
+        transform: translate(-50%, -50%) scale(1.2)
+      }
+    }
+
+    .hero h2 {
+      font-family: var(--font-heading);
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--text-bright);
+      position: relative;
+      line-height: 1.15
+    }
+
+    .hero h2 em {
+      font-style: normal;
+      color: var(--reptile)
+    }
+
+    .hero p {
+      font-size: .85rem;
+      color: var(--text-dim);
+      margin-top: 8px;
+      position: relative
+    }
+
+    .hero .location-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 12px;
+      padding: 6px 14px;
+      border-radius: 50px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      font-size: .7rem;
+      color: var(--silver-dim);
+      font-weight: 600;
+      position: relative
+    }
+
+    /* ===== CATEGORY TABS ===== */
+    .cat-tabs {
+      position: sticky;
+      top: 56px;
+      z-index: 90;
+      background: var(--bg);
+      border-bottom: 1px solid var(--border);
+      padding: 0 16px
+    }
+
+    .cat-tabs-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      scrollbar-width: none
+    }
+
+    .cat-tabs-inner::-webkit-scrollbar {
+      display: none
+    }
+
+    .cat-tab {
+      flex-shrink: 0;
+      padding: 12px 20px;
+      border: none;
+      background: none;
+      color: var(--text-dim);
+      font-family: var(--font-body);
+      font-size: .78rem;
+      font-weight: 600;
+      cursor: pointer;
+      position: relative;
+      text-transform: uppercase;
+      letter-spacing: .8px;
+      transition: color .25s;
+      white-space: nowrap
+    }
+
+    .cat-tab::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--reptile);
+      transition: all .25s;
+      transform: translateX(-50%)
+    }
+
+    .cat-tab:hover {
+      color: var(--text)
+    }
+
+    .cat-tab.active {
+      color: var(--reptile)
+    }
+
+    .cat-tab.active::after {
+      width: 60%
+    }
+
+    /* ===== PRODUCT GRID ===== */
+    .products-section {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px 16px 140px
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px
+    }
+
+    @media(min-width:520px) {
+      .products-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px
+      }
+    }
+
+    @media(min-width:800px) {
+      .products-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 18px
+      }
+    }
+
+    @media(min-width:1100px) {
+      .products-grid {
+        grid-template-columns: repeat(5, 1fr)
+      }
+    }
+
+    .p-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: all .3s cubic-bezier(.25, .8, .25, 1);
+      position: relative;
+      cursor: pointer;
+      animation: cardSlide .4s ease both
+    }
+
+    .p-card:hover {
+      border-color: var(--reptile);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 30px var(--reptile-glow)
+    }
+
+    @keyframes cardSlide {
+      from {
+        opacity: 0;
+        transform: translateY(16px)
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0)
+      }
+    }
+
+    .p-card-img {
+      position: relative;
+      aspect-ratio: 1;
+      overflow: hidden;
+      background: var(--surface)
+    }
+
+    .p-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .4s ease
+    }
+
+    .p-card:hover .p-card-img img {
+      transform: scale(1.06)
+    }
+
+    .p-card-img .category-tag {
+      position: absolute;
+      top: 8px;
+      left: 8px;
+      padding: 3px 8px;
+      border-radius: 4px;
+      background: rgba(0, 0, 0, .7);
+      backdrop-filter: blur(6px);
+      color: var(--reptile);
+      font-size: .55rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .5px
+    }
+
+    .p-card-body {
+      padding: 10px 12px 12px
+    }
+
+    .p-card-body h3 {
+      font-family: var(--font-heading);
+      font-size: .78rem;
+      font-weight: 700;
+      color: var(--text-bright);
+      line-height: 1.3;
+      margin-bottom: 2px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden
+    }
+
+    .p-card-body .p-desc {
+      font-size: .62rem;
+      color: var(--text-dim);
+      margin-bottom: 8px
+    }
+
+    .p-card-price {
+      display: flex;
+      align-items: baseline;
+      gap: 4px;
+      margin-bottom: 8px
+    }
+
+    .p-card-price .main {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--reptile)
+    }
+
+    .p-card-price .del-fee {
+      font-size: .6rem;
+      color: var(--amber);
+      font-weight: 500
+    }
+
+    .atc-btn {
+      width: 100%;
+      padding: 9px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-hex);
+      background: var(--surface);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: .72rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all .25s;
+      text-transform: uppercase;
+      letter-spacing: .5px
+    }
+
+    .atc-btn:hover {
+      background: var(--reptile);
+      color: var(--bg);
+      border-color: var(--reptile)
+    }
+
+    .atc-btn:active {
+      transform: scale(.96)
+    }
+
+    .atc-btn.added {
+      background: var(--reptile);
+      color: var(--bg);
+      border-color: var(--reptile);
+      animation: btnPop .35s ease
+    }
+
+    @keyframes btnPop {
+      0% {
+        transform: scale(1)
+      }
+
+      40% {
+        transform: scale(1.08)
+      }
+
+      100% {
+        transform: scale(1)
+      }
+    }
+
+    /* ===== FLOATING BUTTONS ===== */
+    .fab-wa {
+      position: fixed;
+      bottom: 24px;
+      right: 16px;
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      background: #25D366;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      z-index: 90;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      box-shadow: 0 4px 16px rgba(37, 211, 102, .35);
+      transition: all .25s;
+      text-decoration: none
+    }
+
+    .fab-wa:hover {
+      transform: scale(1.08);
+      box-shadow: 0 6px 24px rgba(37, 211, 102, .5)
+    }
+
+    /* ===== MODAL BASE ===== */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, .75);
+      z-index: 200;
+      display: none;
+      align-items: flex-end;
+      justify-content: center;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px)
+    }
+
+    .modal-overlay.open {
+      display: flex
+    }
+
+    .modal {
+      background: var(--bg-elevated);
+      border-radius: 16px 16px 0 0;
+      width: 100%;
+      max-width: 480px;
+      max-height: 88vh;
+      display: flex;
+      flex-direction: column;
+      animation: mSlideUp .3s cubic-bezier(.25, .8, .25, 1)
+    }
+
+    @keyframes mSlideUp {
+      from {
+        transform: translateY(100%)
+      }
+
+      to {
+        transform: translateY(0)
+      }
+    }
+
+    .modal-bar {
+      width: 36px;
+      height: 4px;
+      border-radius: 2px;
+      background: var(--border-hover);
+      margin: 10px auto 0
+    }
+
+    .modal-header {
+      padding: 12px 20px 10px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between
+    }
+
+    .modal-header h2 {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text-bright)
+    }
+
+    .modal-close {
+      background: none;
+      border: none;
+      color: var(--text-dim);
+      font-size: 1.4rem;
+      cursor: pointer;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .2s
+    }
+
+    .modal-close:hover {
+      background: var(--surface);
+      color: var(--danger)
+    }
+
+    .modal-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 0 20px 16px
+    }
+
+    .modal-footer {
+      padding: 14px 20px;
+      border-top: 1px solid var(--border)
+    }
+
+    /* ===== CART ITEMS ===== */
+    .cart-empty {
+      text-align: center;
+      padding: 40px 0;
+      color: var(--text-dim)
+    }
+
+    .cart-empty .ce-icon {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      opacity: .35
+    }
+
+    .ci {
+      display: flex;
+      gap: 10px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+      animation: ciFade .25s ease
+    }
+
+    @keyframes ciFade {
+      from {
+        opacity: 0;
+        transform: translateX(-8px)
+      }
+
+      to {
+        opacity: 1;
+        transform: none
+      }
+    }
+
+    .ci img {
+      width: 50px;
+      height: 50px;
+      border-radius: var(--radius-hex);
+      object-fit: cover;
+      flex-shrink: 0;
+      border: 1px solid var(--border)
+    }
+
+    .ci-info {
+      flex: 1;
+      min-width: 0
+    }
+
+    .ci-info h4 {
+      font-size: .76rem;
+      font-weight: 700;
+      color: var(--text-bright);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis
+    }
+
+    .ci-info .ci-price {
+      font-size: .68rem;
+      color: var(--reptile);
+      font-weight: 600
+    }
+
+    .ci-info .ci-sub {
+      font-size: .62rem;
+      color: var(--text-dim);
+      margin-top: 1px
+    }
+
+    .ci-actions {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 5px
+    }
+
+    .qty-b {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      cursor: pointer;
+      font-size: .85rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all .2s
+    }
+
+    .qty-b:hover {
+      background: var(--reptile);
+      color: var(--bg);
+      border-color: var(--reptile)
+    }
+
+    .qty-v {
+      font-weight: 700;
+      font-size: .82rem;
+      min-width: 18px;
+      text-align: center
+    }
+
+    .rm-btn {
+      background: none;
+      border: none;
+      color: var(--danger);
+      font-size: .65rem;
+      cursor: pointer;
+      margin-left: auto;
+      font-weight: 600;
+      opacity: .6;
+      transition: opacity .2s;
+      text-transform: uppercase;
+      letter-spacing: .3px
+    }
+
+    .rm-btn:hover {
+      opacity: 1
+    }
+
+    .gt-row {
+      display: flex;
+      justify-content: space-between;
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text-bright);
+      margin-bottom: 12px
+    }
+
+    .co-btn {
+      width: 100%;
+      padding: 13px;
+      border: none;
+      border-radius: var(--radius-hex);
+      background: var(--reptile);
+      color: var(--bg);
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: .88rem;
+      cursor: pointer;
+      transition: all .25s;
+      text-transform: uppercase;
+      letter-spacing: 1px
+    }
+
+    .co-btn:hover {
+      box-shadow: 0 4px 20px var(--reptile-glow);
+      transform: scale(1.01)
+    }
+
+    .co-btn:disabled {
+      opacity: .4;
+      cursor: not-allowed
+    }
+
+    /* ===== CHECKOUT FORM ===== */
+    .ck-form {
+      display: flex;
+      flex-direction: column;
+      gap: 12px
+    }
+
+    .fg label {
+      display: block;
+      font-size: .68rem;
+      font-weight: 600;
+      color: var(--text-dim);
+      margin-bottom: 3px;
+      text-transform: uppercase;
+      letter-spacing: .6px
+    }
+
+    .fg input,
+    .fg textarea {
+      width: 100%;
+      padding: 11px 12px;
+      border-radius: var(--radius-hex);
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: .85rem;
+      font-family: var(--font-body);
+      transition: border-color .2s
+    }
+
+    .fg input:focus,
+    .fg textarea:focus {
+      outline: none;
+      border-color: var(--reptile);
+      box-shadow: 0 0 0 3px var(--reptile-glow)
+    }
+
+    .fg textarea {
+      resize: vertical;
+      min-height: 56px
+    }
+
+    .os-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-hex);
+      padding: 10px;
+      font-size: .72rem;
+      color: var(--text-dim);
+      max-height: 120px;
+      overflow-y: auto;
+      line-height: 1.55;
+      white-space: pre-wrap;
+      font-family: var(--font-body)
+    }
+
+    .so-btn {
+      width: 100%;
+      padding: 13px;
+      border: none;
+      border-radius: var(--radius-hex);
+      background: linear-gradient(135deg, #32D50F, #28a80d);
+      color: var(--bg);
+      font-family: var(--font-heading);
+      font-weight: 800;
+      font-size: .88rem;
+      cursor: pointer;
+      transition: all .25s;
+      text-transform: uppercase;
+      letter-spacing: 1px
+    }
+
+    .so-btn:hover {
+      box-shadow: 0 4px 20px var(--reptile-glow)
+    }
+
+    /* ===== SUCCESS ===== */
+    .sv {
+      text-align: center;
+      padding: 28px 0
+    }
+
+    .sv .sv-icon {
+      font-size: 3.2rem;
+      animation: btnPop .5s ease
+    }
+
+    .sv h3 {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      margin: 10px 0 4px;
+      color: var(--text-bright)
+    }
+
+    .sv p {
+      font-size: .8rem;
+      color: var(--text-dim);
+      margin-bottom: 14px
+    }
+
+    .wa-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 11px 22px;
+      border-radius: 50px;
+      background: #25D366;
+      color: #fff;
+      font-weight: 700;
+      font-size: .85rem;
+      text-decoration: none;
+      transition: all .25s
+    }
+
+    .wa-btn:hover {
+      transform: scale(1.04);
+      box-shadow: 0 4px 16px rgba(37, 211, 102, .4)
+    }
+
+    /* ===== RESPONSIVE HEADER ===== */
+    @media(min-width:600px) {
+      .hero h2 {
+        font-size: 2.6rem
+      }
+
+      .brand h1 {
+        font-size: 1.3rem
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header class="header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-icon">R</div>
+        <div>
+          <h1>REPTREX</h1>
+          <div class="tagline">Lamination's & Premium Covers</div>
+        </div>
+      </div>
+      <div class="header-actions">
+        <button class="header-cart" id="cartFab" onclick="openCart()" title="Your Cart">
+          🛒
+          <span class="badge" id="cartBadge" style="display:none">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== TRUST BAR ===== -->
+  <div class="trust-bar carbon-bg">
+    <div class="trust-bar-inner">
+      <div class="trust-item"><span class="ti-icon">🛡️</span> <span>Premium</span>&nbsp;3M Vinyl Quality</div>
+      <div class="trust-item"><span class="ti-icon">📦</span> <span>Free Setup</span>&nbsp;Zero Glue Residue</div>
+      <div class="trust-item"><span class="ti-icon">🚚</span> Door&nbsp;<span>Delivery</span>&nbsp;Across Behror</div>
+      <div class="trust-item"><span class="ti-icon">⚡</span> <span>Ultra Thin</span>&nbsp;Bubble-Free Finish</div>
+    </div>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <h2>Designer Lamination's<br>for Your <em>Mobile</em></h2>
+    <p>Premium protection meets aesthetic perfection — delivered to your door.</p>
+    <div class="location-badge">📍 Behror, Rajasthan &nbsp;·&nbsp; 📞 7300181886</div>
+  </section>
+
+  <!-- ===== CATEGORY TABS ===== -->
+  <nav class="cat-tabs">
+    <div class="cat-tabs-inner" id="catTabs">
+      <button class="cat-tab active" data-cat="all">All Products</button>
+      <button class="cat-tab" data-cat="Premium Covers">Premium Covers</button>
+      <button class="cat-tab" data-cat="Mobile Lamination">Mobile Lamination</button>
+      <button class="cat-tab" data-cat="Mobile Accessories">Accessories</button>
+    </div>
+  </nav>
+
+  <!-- ===== PRODUCTS ===== -->
+  <section class="products-section">
+    <div class="products-grid" id="productsGrid"></div>
+  </section>
+
+  <!-- ===== WHATSAPP FAB ===== -->
+  <a class="fab-wa" href="https://wa.me/917300181886?text=Hi%20REPTREX!%20I%20have%20a%20query." target="_blank"
+    rel="noopener" title="Chat on WhatsApp">💬</a>
+
+  <!-- ===== CART MODAL ===== -->
+  <div class="modal-overlay" id="cartModal">
+    <div class="modal">
+      <div class="modal-bar"></div>
+      <div class="modal-header">
+        <h2>Your Cart</h2>
+        <button class="modal-close" onclick="closeCart()">✕</button>
+      </div>
+      <div class="modal-body" id="cartBody"></div>
+      <div class="modal-footer" id="cartFooter"></div>
+    </div>
+  </div>
+
+  <!-- ===== CHECKOUT MODAL ===== -->
+  <div class="modal-overlay" id="checkoutModal">
+    <div class="modal">
+      <div class="modal-bar"></div>
+      <div class="modal-header">
+        <h2>Place Order</h2>
+        <button class="modal-close" onclick="closeCheckout()">✕</button>
+      </div>
+      <div class="modal-body" id="checkoutView"></div>
+    </div>
+  </div>
+
+  <script>
+    // ===== PRODUCT DATA =====
+    const PRODUCTS = [
+      {
+        id: 1,
+        name: "iPhone 13 to iPhone 17 Pro Original Premium Leather Cover",
+        price: 800,
+        delivery: 80,
+        category: "Premium Covers",
+        image: "https://i.ibb.co/bjZwD2vJ/61-Cgge-ORgz-L-AC-UF1000-1000-QL80-FMwebp.webp",
+        desc: "AI Generated Premium Designer Leather Cover"
+      }
+      // ➕ Add more products here in the same format
+    ];
+
+    // ===== CART STATE =====
+    let cart = JSON.parse(localStorage.getItem('reptrex_cart') || '[]');
+
+    // ===== RENDER PRODUCTS =====
+    function renderProducts(filter = 'all') {
+      const grid = document.getElementById('productsGrid');
+      const list = filter === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.category === filter);
+      grid.innerHTML = list.map((p, i) => `
+    <div class="p-card" style="animation-delay:${i * .06}s">
+      <div class="p-card-img">
+        <img src="${p.image}" alt="${p.name}" loading="lazy">
+        <span class="category-tag">${p.category}</span>
+      </div>
+      <div class="p-card-body">
+        <h3>${p.name}</h3>
+        <p class="p-desc">${p.desc}</p>
+        <div class="p-card-price">
+          <span class="main">₹${p.price}</span>
+          <span class="del-fee">+₹${p.delivery} delivery</span>
+        </div>
+        <button class="atc-btn" id="atc${p.id}" onclick="addToCart(${p.id})">Add to Cart</button>
+      </div>
+    </div>
+  `).join('');
+    }
+
+    // ===== CATEGORY TABS =====
+    document.getElementById('catTabs').addEventListener('click', e => {
+      if (!e.target.classList.contains('cat-tab')) return;
+      document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
+      e.target.classList.add('active');
+      renderProducts(e.target.dataset.cat);
+    });
+
+    // ===== CART FUNCTIONS =====
+    function saveCart() {
+      localStorage.setItem('reptrex_cart', JSON.stringify(cart));
+      updateBadge();
+    }
+    function updateBadge() {
+      const b = document.getElementById('cartBadge');
+      const c = cart.reduce((s, i) => s + i.qty, 0);
+      b.textContent = c;
+      b.style.display = c > 0 ? 'flex' : 'none';
+    }
+    function addToCart(id) {
+      const p = PRODUCTS.find(x => x.id === id);
+      const ex = cart.find(x => x.id === id);
+      if (ex) ex.qty++; else cart.push({ id: p.id, name: p.name, price: p.price, delivery: p.delivery, image: p.image, qty: 1 });
+      saveCart();
+      const btn = document.getElementById('atc' + id);
+      btn.textContent = '✓ Added';
+      btn.classList.add('added');
+      setTimeout(() => { btn.textContent = 'Add to Cart'; btn.classList.remove('added'); }, 1000);
+    }
+    function removeFromCart(id) {
+      cart = cart.filter(i => i.id !== id);
+      saveCart(); renderCart();
+    }
+    function changeQty(id, d) {
+      const item = cart.find(i => i.id === id);
+      if (!item) return;
+      item.qty += d;
+      if (item.qty <= 0) { removeFromCart(id); return; }
+      saveCart(); renderCart();
+    }
+    function grandTotal() { return cart.reduce((s, i) => s + (i.price + i.delivery) * i.qty, 0); }
+
+    // ===== RENDER CART =====
+    function renderCart() {
+      const body = document.getElementById('cartBody');
+      const foot = document.getElementById('cartFooter');
+      if (!cart.length) {
+        body.innerHTML = '<div class="cart-empty"><div class="ce-icon">🛒</div><p>Your cart is empty</p></div>';
+        foot.innerHTML = ''; return;
+      }
+      body.innerHTML = cart.map(i => `
+    <div class="ci">
+      <img src="${i.image}" alt="${i.name}">
+      <div class="ci-info">
+        <h4>${i.name}</h4>
+        <div class="ci-price">₹${i.price} + ₹${i.delivery} delivery</div>
+        <div class="ci-sub">Subtotal: ₹${(i.price + i.delivery) * i.qty}</div>
+        <div class="ci-actions">
+          <button class="qty-b" onclick="changeQty(${i.id},-1)">−</button>
+          <span class="qty-v">${i.qty}</span>
+          <button class="qty-b" onclick="changeQty(${i.id},1)">+</button>
+          <button class="rm-btn" onclick="removeFromCart(${i.id})">Remove</button>
+        </div>
+      </div>
+    </div>
+  `).join('');
+      foot.innerHTML = `
+    <div class="gt-row"><span>Grand Total</span><span>₹${grandTotal()}</span></div>
+    <button class="co-btn" onclick="openCheckout()">Proceed to Order →</button>
+  `;
+    }
+
+    // ===== MODALS =====
+    function openCart() { renderCart(); document.getElementById('cartModal').classList.add('open'); }
+    function closeCart() { document.getElementById('cartModal').classList.remove('open'); }
+    function closeCheckout() { document.getElementById('checkoutModal').classList.remove('open'); }
+    document.querySelectorAll('.modal-overlay').forEach(m => {
+      m.addEventListener('click', e => { if (e.target === m) m.classList.remove('open'); });
+    });
+
+    // ===== CHECKOUT =====
+    function openCheckout() {
+      closeCart();
+      const v = document.getElementById('checkoutView');
+      const lines = cart.map(i => `${i.name} x${i.qty} = ₹${(i.price + i.delivery) * i.qty}`).join('\n');
+      const summary = lines + '\n\nGrand Total: ₹' + grandTotal();
+      v.innerHTML = `
+    <form class="ck-form" id="orderForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <div class="fg"><label>Your Name *</label>
+        <input type="text" name="customer_name" required placeholder="Full name"></div>
+      <div class="fg"><label>Phone Number *</label>
+        <input type="tel" name="phone" required placeholder="e.g. 9876543210" pattern="[0-9]{10}" title="Enter 10-digit number"></div>
+      <div class="fg"><label>Delivery Address *</label>
+        <textarea name="address" required placeholder="Full address with pincode"></textarea></div>
+      <div class="fg"><label>Mobile Model (for fitting) *</label>
+        <input type="text" name="mobile_model" required placeholder="e.g. iPhone 15 Pro Max"></div>
+      <div class="fg"><label>Order Summary</label>
+        <div class="os-box">${summary}</div></div>
+      <input type="hidden" name="order_details" value="${summary.replace(/"/g, '&quot;')}">
+      <input type="hidden" name="_subject" value="🛒 New Order — REPTREX LAMINATION'S">
+      <button type="submit" class="so-btn">✅ Place Order</button>
+      <p style="text-align:center;font-size:.68rem;color:var(--text-dim);margin-top:6px">
+        Or order directly via
+        <a href="https://wa.me/917300181886?text=${encodeURIComponent('Hi! I want to order:\n\n' + summary)}" target="_blank" style="color:#25D366;font-weight:700">WhatsApp →</a>
+      </p>
+    </form>
+  `;
+      document.getElementById('checkoutModal').classList.add('open');
+      document.getElementById('orderForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+        const fd = new FormData(e.target);
+        fetch(e.target.action, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } })
+          .then(r => { if (r.ok) { cart = []; saveCart(); showSuccess(); } else alert('Error — try WhatsApp instead!'); })
+          .catch(() => alert('Network error — try WhatsApp!'));
+      });
+    }
+    function showSuccess() {
+      document.getElementById('checkoutView').innerHTML = `
+    <div class="sv">
+      <div class="sv-icon">✅</div>
+      <h3>Order Placed!</h3>
+      <p>REPTREX LAMINATION'S will contact you on WhatsApp to confirm your order.</p>
+      <a class="wa-btn" href="https://wa.me/917300181886?text=Hi!%20I%20just%20placed%20an%20order." target="_blank">💬 Message on WhatsApp</a>
+    </div>
+  `;
+    }
+
+    // ===== INIT =====
+    renderProducts();
+    updateBadge();
+  </script>
+</body>
+
+</html>
