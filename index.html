@@ -1,585 +1,80 @@
 <!DOCTYPE html>
-<html lang="en">
+<html class="dark" lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
   <title>REPTREX LAMINATION'S — Premium Mobile Skins & Covers</title>
   <meta name="description"
-    content="REPTREX LAMINATION'S — Designer Lamination's for Your Mobile delivered to your door. Premium covers, laminations & accessories in Behror, Rajasthan.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-    rel="stylesheet">
+    content="REPTREX LAMINATION'S — Designer Laminations for your mobile, delivered to your door. Behror, Rajasthan.">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+    rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            primary: "#30d70f",
+            "primary-dark": "#23a30a",
+            "bg-dark": "#121811",
+            "surface-dark": "#1a2319",
+            "surface-darker": "#0d110c",
+            "border-dark": "#2b3928",
+            "text-muted": "#a1b99d",
+            "neutral-700": "#2b3928",
+            "neutral-800": "#121811",
+            "neutral-900": "#0a1209",
+          },
+          fontFamily: {
+            display: ["Space Grotesk", "sans-serif"],
+          },
+        },
+      },
+    }
+  </script>
   <style>
-    *,
-    *::before,
-    *::after {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box
+    .clip-cut-corner {
+      clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px)
     }
 
-    :root {
-      --bg: #0e0e0e;
-      --bg-elevated: #1a1a1a;
-      --surface: #222222;
-      --card: #1e1e1e;
-      --border: #2e2e2e;
-      --border-hover: #3e3e3e;
-      --reptile: #32D50F;
-      --reptile-dim: #32D50F88;
-      --reptile-glow: #32D50F33;
-      --silver: #c0c0c0;
-      --silver-dim: #888;
-      --text: #e4e4e4;
-      --text-dim: #777;
-      --text-bright: #fff;
-      --danger: #ff4444;
-      --amber: #FFB020;
-      --radius: 12px;
-      --radius-hex: 6px;
-      --font-heading: 'Outfit', sans-serif;
-      --font-body: 'Space Grotesk', sans-serif;
+    .clip-hex {
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)
     }
 
-    html {
-      scroll-behavior: smooth
-    }
-
-    body {
-      font-family: var(--font-body);
-      background: var(--bg);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-      overflow-x: hidden
-    }
-
-    a {
-      color: var(--reptile);
-      text-decoration: none
-    }
-
-    /* === HEXAGONAL CLIP PATH FOR ACCENTS === */
-    .hex-shape {
-      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)
-    }
-
-    /* === CARBON FIBER TEXTURE === */
     .carbon-bg {
-      background-image:
-        linear-gradient(45deg, rgba(255, 255, 255, .02) 25%, transparent 25%),
-        linear-gradient(-45deg, rgba(255, 255, 255, .02) 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, rgba(255, 255, 255, .02) 75%),
-        linear-gradient(-45deg, transparent 75%, rgba(255, 255, 255, .02) 75%);
-      background-size: 4px 4px;
-      background-position: 0 0, 0 2px, 2px -2px, -2px 0
+      background-color: #0d110c;
+      background-image: linear-gradient(45deg, #131a12 25%, transparent 25%, transparent 75%, #131a12 75%), linear-gradient(45deg, #131a12 25%, transparent 25%, transparent 75%, #131a12 75%);
+      background-position: 0 0, 10px 10px;
+      background-size: 20px 20px
     }
 
-    /* ===== HEADER ===== */
-    .header {
-      background: var(--bg-elevated);
-      border-bottom: 1px solid var(--border);
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      backdrop-filter: blur(20px);
-      -webkit-backdrop-filter: blur(20px)
+    .reptile-glow {
+      box-shadow: 0 0 15px rgba(48, 215, 15, .3)
     }
 
-    .header-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 14px 16px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px
-    }
-
-    .brand-icon {
-      width: 36px;
-      height: 36px;
-      background: var(--reptile);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      font-weight: 900;
-      color: var(--bg);
-      clip-path: polygon(25% 0%, 75% 0%, 100% 50%, 75% 100%, 25% 100%, 0% 50%)
-    }
-
-    .brand h1 {
-      font-family: var(--font-heading);
-      font-size: 1.15rem;
-      font-weight: 900;
-      color: var(--text-bright);
-      letter-spacing: 1.5px;
-      line-height: 1.1
-    }
-
-    .brand .tagline {
-      font-size: .6rem;
-      color: var(--text-dim);
-      font-weight: 500;
-      letter-spacing: .5px;
-      text-transform: uppercase
-    }
-
-    .header-actions {
-      display: flex;
-      gap: 10px;
-      align-items: center
-    }
-
-    .header-cart {
-      position: relative;
-      width: 40px;
-      height: 40px;
-      border-radius: var(--radius-hex);
-      border: 1px solid var(--border);
-      background: var(--surface);
-      color: var(--text);
-      cursor: pointer;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.1rem;
-      transition: all .25s
-    }
-
-    .header-cart:hover {
-      border-color: var(--reptile);
-      background: var(--reptile-glow)
-    }
-
-    .header-cart .badge {
-      position: absolute;
-      top: -5px;
-      right: -5px;
-      background: var(--reptile);
-      color: var(--bg);
-      font-size: .6rem;
-      font-weight: 800;
-      width: 18px;
-      height: 18px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      border: 2px solid var(--bg-elevated);
-      animation: badgePop .3s ease
-    }
-
-    @keyframes badgePop {
-      from {
-        transform: scale(0)
-      }
-
-      to {
-        transform: scale(1)
-      }
-    }
-
-    /* ===== HERO / TRUST BAR ===== */
-    .trust-bar {
-      background: var(--bg-elevated);
-      border-bottom: 1px solid var(--border);
-      overflow: hidden
-    }
-
-    .trust-bar-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 10px 16px;
-      display: flex;
-      gap: 24px;
-      align-items: center;
-      overflow-x: auto;
-      scrollbar-width: none;
-      -webkit-overflow-scrolling: touch
-    }
-
-    .trust-bar-inner::-webkit-scrollbar {
+    .hide-scroll::-webkit-scrollbar {
       display: none
     }
 
-    .trust-item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      flex-shrink: 0;
-      font-size: .72rem;
-      font-weight: 600;
-      color: var(--silver-dim);
-      text-transform: uppercase;
-      letter-spacing: .5px
-    }
-
-    .trust-item .ti-icon {
-      font-size: .9rem
-    }
-
-    .trust-item span {
-      color: var(--reptile);
-      font-weight: 700
-    }
-
-    /* ===== HERO BANNER ===== */
-    .hero {
-      position: relative;
-      padding: 40px 16px 32px;
-      text-align: center;
-      overflow: hidden;
-      background: linear-gradient(180deg, var(--bg-elevated) 0%, var(--bg) 100%)
-    }
-
-    .hero::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 300px;
-      height: 300px;
-      background: radial-gradient(circle, var(--reptile-glow) 0%, transparent 70%);
-      transform: translate(-50%, -50%);
-      pointer-events: none;
-      animation: heroPulse 4s ease-in-out infinite alternate
-    }
-
-    @keyframes heroPulse {
-      0% {
-        opacity: .3;
-        transform: translate(-50%, -50%) scale(1)
-      }
-
-      100% {
-        opacity: .6;
-        transform: translate(-50%, -50%) scale(1.2)
-      }
-    }
-
-    .hero h2 {
-      font-family: var(--font-heading);
-      font-size: 2rem;
-      font-weight: 900;
-      color: var(--text-bright);
-      position: relative;
-      line-height: 1.15
-    }
-
-    .hero h2 em {
-      font-style: normal;
-      color: var(--reptile)
-    }
-
-    .hero p {
-      font-size: .85rem;
-      color: var(--text-dim);
-      margin-top: 8px;
-      position: relative
-    }
-
-    .hero .location-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-      margin-top: 12px;
-      padding: 6px 14px;
-      border-radius: 50px;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      font-size: .7rem;
-      color: var(--silver-dim);
-      font-weight: 600;
-      position: relative
-    }
-
-    /* ===== CATEGORY TABS ===== */
-    .cat-tabs {
-      position: sticky;
-      top: 56px;
-      z-index: 90;
-      background: var(--bg);
-      border-bottom: 1px solid var(--border);
-      padding: 0 16px
-    }
-
-    .cat-tabs-inner {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      gap: 0;
-      overflow-x: auto;
+    .hide-scroll {
+      -ms-overflow-style: none;
       scrollbar-width: none
     }
 
-    .cat-tabs-inner::-webkit-scrollbar {
+    .page {
       display: none
     }
 
-    .cat-tab {
-      flex-shrink: 0;
-      padding: 12px 20px;
-      border: none;
-      background: none;
-      color: var(--text-dim);
-      font-family: var(--font-body);
-      font-size: .78rem;
-      font-weight: 600;
-      cursor: pointer;
-      position: relative;
-      text-transform: uppercase;
-      letter-spacing: .8px;
-      transition: color .25s;
-      white-space: nowrap
+    .page.active {
+      display: block
     }
 
-    .cat-tab::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 50%;
-      width: 0;
-      height: 2px;
-      background: var(--reptile);
-      transition: all .25s;
-      transform: translateX(-50%)
-    }
-
-    .cat-tab:hover {
-      color: var(--text)
-    }
-
-    .cat-tab.active {
-      color: var(--reptile)
-    }
-
-    .cat-tab.active::after {
-      width: 60%
-    }
-
-    /* ===== PRODUCT GRID ===== */
-    .products-section {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 20px 16px 140px
-    }
-
-    .products-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px
-    }
-
-    @media(min-width:520px) {
-      .products-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 16px
-      }
-    }
-
-    @media(min-width:800px) {
-      .products-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 18px
-      }
-    }
-
-    @media(min-width:1100px) {
-      .products-grid {
-        grid-template-columns: repeat(5, 1fr)
-      }
-    }
-
-    .p-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: var(--radius);
-      overflow: hidden;
-      transition: all .3s cubic-bezier(.25, .8, .25, 1);
-      position: relative;
-      cursor: pointer;
-      animation: cardSlide .4s ease both
-    }
-
-    .p-card:hover {
-      border-color: var(--reptile);
-      transform: translateY(-3px);
-      box-shadow: 0 8px 30px var(--reptile-glow)
-    }
-
-    @keyframes cardSlide {
-      from {
-        opacity: 0;
-        transform: translateY(16px)
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0)
-      }
-    }
-
-    .p-card-img {
-      position: relative;
-      aspect-ratio: 1;
-      overflow: hidden;
-      background: var(--surface)
-    }
-
-    .p-card-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform .4s ease
-    }
-
-    .p-card:hover .p-card-img img {
-      transform: scale(1.06)
-    }
-
-    .p-card-img .category-tag {
-      position: absolute;
-      top: 8px;
-      left: 8px;
-      padding: 3px 8px;
-      border-radius: 4px;
-      background: rgba(0, 0, 0, .7);
-      backdrop-filter: blur(6px);
-      color: var(--reptile);
-      font-size: .55rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .5px
-    }
-
-    .p-card-body {
-      padding: 10px 12px 12px
-    }
-
-    .p-card-body h3 {
-      font-family: var(--font-heading);
-      font-size: .78rem;
-      font-weight: 700;
-      color: var(--text-bright);
-      line-height: 1.3;
-      margin-bottom: 2px;
-      display: -webkit-box;
-      -webkit-line-clamp: 2;
-      -webkit-box-orient: vertical;
-      overflow: hidden
-    }
-
-    .p-card-body .p-desc {
-      font-size: .62rem;
-      color: var(--text-dim);
-      margin-bottom: 8px
-    }
-
-    .p-card-price {
-      display: flex;
-      align-items: baseline;
-      gap: 4px;
-      margin-bottom: 8px
-    }
-
-    .p-card-price .main {
-      font-family: var(--font-heading);
-      font-size: 1rem;
-      font-weight: 800;
-      color: var(--reptile)
-    }
-
-    .p-card-price .del-fee {
-      font-size: .6rem;
-      color: var(--amber);
-      font-weight: 500
-    }
-
-    .atc-btn {
-      width: 100%;
-      padding: 9px;
-      border: 1px solid var(--border);
-      border-radius: var(--radius-hex);
-      background: var(--surface);
-      color: var(--text);
-      font-family: var(--font-body);
-      font-size: .72rem;
-      font-weight: 700;
-      cursor: pointer;
-      transition: all .25s;
-      text-transform: uppercase;
-      letter-spacing: .5px
-    }
-
-    .atc-btn:hover {
-      background: var(--reptile);
-      color: var(--bg);
-      border-color: var(--reptile)
-    }
-
-    .atc-btn:active {
-      transform: scale(.96)
-    }
-
-    .atc-btn.added {
-      background: var(--reptile);
-      color: var(--bg);
-      border-color: var(--reptile);
-      animation: btnPop .35s ease
-    }
-
-    @keyframes btnPop {
-      0% {
-        transform: scale(1)
-      }
-
-      40% {
-        transform: scale(1.08)
-      }
-
-      100% {
-        transform: scale(1)
-      }
-    }
-
-    /* ===== FLOATING BUTTONS ===== */
-    .fab-wa {
-      position: fixed;
-      bottom: 24px;
-      right: 16px;
-      width: 52px;
-      height: 52px;
-      border-radius: 50%;
-      background: #25D366;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      z-index: 90;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.4rem;
-      box-shadow: 0 4px 16px rgba(37, 211, 102, .35);
-      transition: all .25s;
-      text-decoration: none
-    }
-
-    .fab-wa:hover {
-      transform: scale(1.08);
-      box-shadow: 0 6px 24px rgba(37, 211, 102, .5)
-    }
-
-    /* ===== MODAL BASE ===== */
-    .modal-overlay {
+    /* Cart modal */
+    .modal-bg {
       position: fixed;
       inset: 0;
       background: rgba(0, 0, 0, .75);
@@ -587,26 +82,25 @@
       display: none;
       align-items: flex-end;
       justify-content: center;
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px)
+      backdrop-filter: blur(6px)
     }
 
-    .modal-overlay.open {
+    .modal-bg.open {
       display: flex
     }
 
-    .modal {
-      background: var(--bg-elevated);
+    .modal-panel {
+      background: #121811;
       border-radius: 16px 16px 0 0;
       width: 100%;
       max-width: 480px;
       max-height: 88vh;
       display: flex;
       flex-direction: column;
-      animation: mSlideUp .3s cubic-bezier(.25, .8, .25, 1)
+      animation: mUp .3s ease
     }
 
-    @keyframes mSlideUp {
+    @keyframes mUp {
       from {
         transform: translateY(100%)
       }
@@ -616,504 +110,537 @@
       }
     }
 
-    .modal-bar {
-      width: 36px;
-      height: 4px;
-      border-radius: 2px;
-      background: var(--border-hover);
-      margin: 10px auto 0
-    }
-
-    .modal-header {
-      padding: 12px 20px 10px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between
-    }
-
-    .modal-header h2 {
-      font-family: var(--font-heading);
-      font-size: 1rem;
-      font-weight: 800;
-      color: var(--text-bright)
-    }
-
-    .modal-close {
-      background: none;
-      border: none;
-      color: var(--text-dim);
-      font-size: 1.4rem;
-      cursor: pointer;
-      width: 32px;
-      height: 32px;
+    .badge-dot {
+      position: absolute;
+      -top-1px;
+      -right-1px;
+      width: 12px;
+      height: 12px;
+      background: #30d70f;
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all .2s
-    }
-
-    .modal-close:hover {
-      background: var(--surface);
-      color: var(--danger)
-    }
-
-    .modal-body {
-      flex: 1;
-      overflow-y: auto;
-      padding: 0 20px 16px
-    }
-
-    .modal-footer {
-      padding: 14px 20px;
-      border-top: 1px solid var(--border)
-    }
-
-    /* ===== CART ITEMS ===== */
-    .cart-empty {
-      text-align: center;
-      padding: 40px 0;
-      color: var(--text-dim)
-    }
-
-    .cart-empty .ce-icon {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-      opacity: .35
-    }
-
-    .ci {
-      display: flex;
-      gap: 10px;
-      padding: 12px 0;
-      border-bottom: 1px solid var(--border);
-      animation: ciFade .25s ease
-    }
-
-    @keyframes ciFade {
-      from {
-        opacity: 0;
-        transform: translateX(-8px)
-      }
-
-      to {
-        opacity: 1;
-        transform: none
-      }
-    }
-
-    .ci img {
-      width: 50px;
-      height: 50px;
-      border-radius: var(--radius-hex);
-      object-fit: cover;
-      flex-shrink: 0;
-      border: 1px solid var(--border)
-    }
-
-    .ci-info {
-      flex: 1;
-      min-width: 0
-    }
-
-    .ci-info h4 {
-      font-size: .76rem;
-      font-weight: 700;
-      color: var(--text-bright);
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis
-    }
-
-    .ci-info .ci-price {
-      font-size: .68rem;
-      color: var(--reptile);
-      font-weight: 600
-    }
-
-    .ci-info .ci-sub {
-      font-size: .62rem;
-      color: var(--text-dim);
-      margin-top: 1px
-    }
-
-    .ci-actions {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 5px
-    }
-
-    .qty-b {
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      color: var(--text);
-      cursor: pointer;
-      font-size: .85rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all .2s
-    }
-
-    .qty-b:hover {
-      background: var(--reptile);
-      color: var(--bg);
-      border-color: var(--reptile)
-    }
-
-    .qty-v {
-      font-weight: 700;
-      font-size: .82rem;
-      min-width: 18px;
-      text-align: center
-    }
-
-    .rm-btn {
-      background: none;
-      border: none;
-      color: var(--danger);
-      font-size: .65rem;
-      cursor: pointer;
-      margin-left: auto;
-      font-weight: 600;
-      opacity: .6;
-      transition: opacity .2s;
-      text-transform: uppercase;
-      letter-spacing: .3px
-    }
-
-    .rm-btn:hover {
-      opacity: 1
-    }
-
-    .gt-row {
-      display: flex;
-      justify-content: space-between;
-      font-family: var(--font-heading);
-      font-size: 1.05rem;
-      font-weight: 800;
-      color: var(--text-bright);
-      margin-bottom: 12px
-    }
-
-    .co-btn {
-      width: 100%;
-      padding: 13px;
-      border: none;
-      border-radius: var(--radius-hex);
-      background: var(--reptile);
-      color: var(--bg);
-      font-family: var(--font-heading);
-      font-weight: 800;
-      font-size: .88rem;
-      cursor: pointer;
-      transition: all .25s;
-      text-transform: uppercase;
-      letter-spacing: 1px
-    }
-
-    .co-btn:hover {
-      box-shadow: 0 4px 20px var(--reptile-glow);
-      transform: scale(1.01)
-    }
-
-    .co-btn:disabled {
-      opacity: .4;
-      cursor: not-allowed
-    }
-
-    /* ===== CHECKOUT FORM ===== */
-    .ck-form {
-      display: flex;
-      flex-direction: column;
-      gap: 12px
-    }
-
-    .fg label {
-      display: block;
-      font-size: .68rem;
-      font-weight: 600;
-      color: var(--text-dim);
-      margin-bottom: 3px;
-      text-transform: uppercase;
-      letter-spacing: .6px
-    }
-
-    .fg input,
-    .fg textarea {
-      width: 100%;
-      padding: 11px 12px;
-      border-radius: var(--radius-hex);
-      border: 1px solid var(--border);
-      background: var(--surface);
-      color: var(--text);
-      font-size: .85rem;
-      font-family: var(--font-body);
-      transition: border-color .2s
-    }
-
-    .fg input:focus,
-    .fg textarea:focus {
-      outline: none;
-      border-color: var(--reptile);
-      box-shadow: 0 0 0 3px var(--reptile-glow)
-    }
-
-    .fg textarea {
-      resize: vertical;
-      min-height: 56px
-    }
-
-    .os-box {
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: var(--radius-hex);
-      padding: 10px;
-      font-size: .72rem;
-      color: var(--text-dim);
-      max-height: 120px;
-      overflow-y: auto;
-      line-height: 1.55;
-      white-space: pre-wrap;
-      font-family: var(--font-body)
-    }
-
-    .so-btn {
-      width: 100%;
-      padding: 13px;
-      border: none;
-      border-radius: var(--radius-hex);
-      background: linear-gradient(135deg, #32D50F, #28a80d);
-      color: var(--bg);
-      font-family: var(--font-heading);
-      font-weight: 800;
-      font-size: .88rem;
-      cursor: pointer;
-      transition: all .25s;
-      text-transform: uppercase;
-      letter-spacing: 1px
-    }
-
-    .so-btn:hover {
-      box-shadow: 0 4px 20px var(--reptile-glow)
-    }
-
-    /* ===== SUCCESS ===== */
-    .sv {
-      text-align: center;
-      padding: 28px 0
-    }
-
-    .sv .sv-icon {
-      font-size: 3.2rem;
-      animation: btnPop .5s ease
-    }
-
-    .sv h3 {
-      font-family: var(--font-heading);
-      font-size: 1.1rem;
-      margin: 10px 0 4px;
-      color: var(--text-bright)
-    }
-
-    .sv p {
-      font-size: .8rem;
-      color: var(--text-dim);
-      margin-bottom: 14px
-    }
-
-    .wa-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 11px 22px;
-      border-radius: 50px;
-      background: #25D366;
-      color: #fff;
-      font-weight: 700;
-      font-size: .85rem;
-      text-decoration: none;
-      transition: all .25s
-    }
-
-    .wa-btn:hover {
-      transform: scale(1.04);
-      box-shadow: 0 4px 16px rgba(37, 211, 102, .4)
-    }
-
-    /* ===== RESPONSIVE HEADER ===== */
-    @media(min-width:600px) {
-      .hero h2 {
-        font-size: 2.6rem
-      }
-
-      .brand h1 {
-        font-size: 1.3rem
-      }
+      border: 2px solid #121811
     }
   </style>
 </head>
 
-<body>
+<body class="bg-bg-dark text-slate-100 font-display min-h-screen flex flex-col overflow-x-hidden">
 
-  <!-- ===== HEADER ===== -->
-  <header class="header">
-    <div class="header-inner">
-      <div class="brand">
-        <div class="brand-icon">R</div>
-        <div>
-          <h1>REPTREX</h1>
-          <div class="tagline">Lamination's & Premium Covers</div>
-        </div>
+  <!-- ========== SHARED HEADER ========== -->
+  <header
+    class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-border-dark bg-surface-darker/95 backdrop-blur-md px-4 md:px-8 py-3">
+    <div class="flex items-center gap-3 cursor-pointer" onclick="showPage('home')">
+      <span class="material-symbols-outlined text-primary !text-3xl">token</span>
+      <div>
+        <h2 class="text-white text-lg md:text-xl font-bold tracking-wider uppercase leading-tight">REPTREX</h2>
+        <p class="text-text-muted text-[10px] tracking-wider uppercase hidden sm:block">Lamination's & Premium Covers
+        </p>
       </div>
-      <div class="header-actions">
-        <button class="header-cart" id="cartFab" onclick="openCart()" title="Your Cart">
-          🛒
-          <span class="badge" id="cartBadge" style="display:none">0</span>
-        </button>
-      </div>
+    </div>
+    <nav class="hidden md:flex items-center gap-8">
+      <a onclick="showPage('home')"
+        class="nav-link text-sm font-medium uppercase tracking-widest cursor-pointer transition-colors"
+        data-page="home">Hatchery</a>
+      <a onclick="showPage('models')"
+        class="nav-link text-sm font-medium uppercase tracking-widest cursor-pointer transition-colors"
+        data-page="models">Devices</a>
+      <a onclick="showPage('product')"
+        class="nav-link text-sm font-medium uppercase tracking-widest cursor-pointer transition-colors"
+        data-page="product">Vault</a>
+      <a href="https://wa.me/917300181886" target="_blank"
+        class="text-text-muted hover:text-primary text-sm font-medium uppercase tracking-widest transition-colors">Support</a>
+    </nav>
+    <div class="flex items-center gap-4">
+      <button onclick="openCart()" class="relative text-slate-300 hover:text-primary transition-colors">
+        <span class="material-symbols-outlined">shopping_cart</span>
+        <span id="cartBadge"
+          class="hidden absolute -top-1 -right-2 h-[18px] min-w-[18px] px-1 bg-primary text-bg-dark text-[10px] font-bold rounded-full flex items-center justify-center border-2 border-surface-darker">0</span>
+      </button>
+      <!-- Mobile menu -->
+      <button onclick="document.getElementById('mobileMenu').classList.toggle('hidden')" class="md:hidden text-white">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
     </div>
   </header>
-
-  <!-- ===== TRUST BAR ===== -->
-  <div class="trust-bar carbon-bg">
-    <div class="trust-bar-inner">
-      <div class="trust-item"><span class="ti-icon">🛡️</span> <span>Premium</span>&nbsp;3M Vinyl Quality</div>
-      <div class="trust-item"><span class="ti-icon">📦</span> <span>Free Setup</span>&nbsp;Zero Glue Residue</div>
-      <div class="trust-item"><span class="ti-icon">🚚</span> Door&nbsp;<span>Delivery</span>&nbsp;Across Behror</div>
-      <div class="trust-item"><span class="ti-icon">⚡</span> <span>Ultra Thin</span>&nbsp;Bubble-Free Finish</div>
-    </div>
+  <!-- Mobile Nav Dropdown -->
+  <div id="mobileMenu"
+    class="hidden md:hidden bg-surface-darker border-b border-border-dark px-4 py-3 flex flex-col gap-2 z-40">
+    <a onclick="showPage('home');document.getElementById('mobileMenu').classList.add('hidden')"
+      class="text-text-muted hover:text-primary py-2 text-sm font-medium uppercase tracking-widest cursor-pointer">Hatchery</a>
+    <a onclick="showPage('models');document.getElementById('mobileMenu').classList.add('hidden')"
+      class="text-text-muted hover:text-primary py-2 text-sm font-medium uppercase tracking-widest cursor-pointer">Devices</a>
+    <a onclick="showPage('product');document.getElementById('mobileMenu').classList.add('hidden')"
+      class="text-text-muted hover:text-primary py-2 text-sm font-medium uppercase tracking-widest cursor-pointer">Vault</a>
   </div>
 
-  <!-- ===== HERO ===== -->
-  <section class="hero">
-    <h2>Designer Lamination's<br>for Your <em>Mobile</em></h2>
-    <p>Premium protection meets aesthetic perfection — delivered to your door.</p>
-    <div class="location-badge">📍 Behror, Rajasthan &nbsp;·&nbsp; 📞 7300181886</div>
-  </section>
-
-  <!-- ===== CATEGORY TABS ===== -->
-  <nav class="cat-tabs">
-    <div class="cat-tabs-inner" id="catTabs">
-      <button class="cat-tab active" data-cat="all">All Products</button>
-      <button class="cat-tab" data-cat="Premium Covers">Premium Covers</button>
-      <button class="cat-tab" data-cat="Mobile Lamination">Mobile Lamination</button>
-      <button class="cat-tab" data-cat="Mobile Accessories">Accessories</button>
-    </div>
-  </nav>
-
-  <!-- ===== PRODUCTS ===== -->
-  <section class="products-section">
-    <div class="products-grid" id="productsGrid"></div>
-  </section>
-
-  <!-- ===== WHATSAPP FAB ===== -->
-  <a class="fab-wa" href="https://wa.me/917300181886?text=Hi%20REPTREX!%20I%20have%20a%20query." target="_blank"
-    rel="noopener" title="Chat on WhatsApp">💬</a>
-
-  <!-- ===== CART MODAL ===== -->
-  <div class="modal-overlay" id="cartModal">
-    <div class="modal">
-      <div class="modal-bar"></div>
-      <div class="modal-header">
-        <h2>Your Cart</h2>
-        <button class="modal-close" onclick="closeCart()">✕</button>
+  <!-- ========== PAGE 1: HATCHERY (HOME) ========== -->
+  <div id="page-home" class="page active">
+    <main class="flex flex-1 flex-col items-center">
+      <div class="w-full max-w-[1280px] px-4 md:px-10 flex flex-col gap-10 py-10">
+        <!-- Hero -->
+        <div class="relative w-full overflow-hidden rounded-lg border border-border-dark bg-surface-dark/50">
+          <div class="absolute inset-0 z-0 opacity-10"
+            style="background-image:linear-gradient(#30d70f 1px,transparent 1px),linear-gradient(90deg,#30d70f 1px,transparent 1px);background-size:40px 40px">
+          </div>
+          <div
+            class="relative z-10 flex min-h-[380px] md:min-h-[480px] flex-col gap-6 items-center justify-center p-6 text-center">
+            <div class="inline-flex items-center gap-2 text-primary text-xs font-bold tracking-[0.2em] uppercase mb-2">
+              <span class="size-2 rounded-full bg-primary animate-pulse"></span> System Online
+            </div>
+            <h1 class="text-white text-3xl md:text-6xl font-black leading-tight tracking-tight uppercase">
+              Enter The <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-green-600">Hatchery</span>
+            </h1>
+            <p class="text-text-muted text-sm md:text-lg max-w-lg mx-auto">Designer Lamination's for Your Mobile —
+              delivered to your door.</p>
+            <div class="flex items-center gap-2 text-xs text-text-muted/60 mt-2">📍 Behror, Rajasthan · 📞 7300181886
+            </div>
+            <button onclick="showPage('models')"
+              class="mt-4 flex items-center gap-2 clip-cut-corner bg-primary hover:bg-white text-bg-dark px-8 py-3 font-bold uppercase tracking-wide text-sm transition-colors">
+              Browse Devices <span class="material-symbols-outlined text-base">arrow_forward</span>
+            </button>
+          </div>
+        </div>
+        <!-- Categories -->
+        <div class="flex flex-col gap-6 w-full">
+          <div class="flex items-end justify-between border-b border-border-dark pb-4">
+            <h2 class="text-white text-xl md:text-2xl font-bold tracking-wide uppercase flex items-center gap-3">
+              <span class="material-symbols-outlined text-primary">category</span> Select Manufacturer
+            </h2>
+          </div>
+          <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            <a onclick="showPage('models')"
+              class="group cursor-pointer flex flex-col gap-3 bg-surface-dark border border-border-dark p-3 md:p-4 hover:border-primary/50 transition-all rounded-sm">
+              <div
+                class="w-full aspect-[4/3] bg-bg-dark rounded-sm overflow-hidden relative border border-white/5 group-hover:border-primary/20">
+                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                  style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuDuAfnta4N0zjUSpeNRbyj2jZ1dBFyjjI5u9Ut9D6wAqeCw_rHttV1topy0j4rS5Gcz6pqvaOxyR0FMv2T-CPCytnz8qvKWUM_Mc9AMjVij_p7URK5UmRWhUWnvwKjvkvOyX1LCZ2p0R46pw_N6eWFBdnC-Y2Sn_4PfYdv3vPjnUndTUy84ozQFe9b1_n6NImj7Yarle_8HUNgqd5yz7bm32vuIUeB6inohfi4i-GF0QzLgJFZbAvdMv_YNNbG0AE3dqb_K74cIgOI')">
+                </div>
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-surface-dark via-transparent to-transparent opacity-60">
+                </div>
+              </div>
+              <div>
+                <p
+                  class="text-white text-base md:text-lg font-bold uppercase tracking-wide group-hover:text-primary transition-colors">
+                  Apple</p>
+                <p class="text-text-muted text-xs mt-1">iPhone, iPad, MacBook, Airpods</p>
+              </div>
+            </a>
+            <a onclick="showPage('models')"
+              class="group cursor-pointer flex flex-col gap-3 bg-surface-dark border border-border-dark p-3 md:p-4 hover:border-primary/50 transition-all rounded-sm">
+              <div
+                class="w-full aspect-[4/3] bg-bg-dark rounded-sm overflow-hidden relative border border-white/5 group-hover:border-primary/20">
+                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                  style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuDuMkmoVZRBxT_eZpY_D74c2k6T4FfUXGxK3f1Eu_mjS3ejh5Y-qd4adpReEaTDrOoS9NhzSCmxk70vdv8ILaGEl6WjkzC8p-Hk3xcMbHWx3G9ximgzpxX-Y8LpprEWUqgjDkjLsg-Xg6mcd0Ft-m_vpANGm8bRWW9rxWJQuPK2YUTfH77pLwZ29aSeXQT_SXq9lcjhhuqsgd6dQTuuPFqB36_1djW9_ZP62uG-aPJMj0QMyRtfiLmHFcsNpG_VslTEcS-E9ceSlw8')">
+                </div>
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-surface-dark via-transparent to-transparent opacity-60">
+                </div>
+              </div>
+              <div>
+                <p
+                  class="text-white text-base md:text-lg font-bold uppercase tracking-wide group-hover:text-primary transition-colors">
+                  Samsung</p>
+                <p class="text-text-muted text-xs mt-1">Galaxy S Series, Fold, Flip</p>
+              </div>
+            </a>
+            <a onclick="showPage('models')"
+              class="group cursor-pointer flex flex-col gap-3 bg-surface-dark border border-border-dark p-3 md:p-4 hover:border-primary/50 transition-all rounded-sm">
+              <div
+                class="w-full aspect-[4/3] bg-bg-dark rounded-sm overflow-hidden relative border border-white/5 group-hover:border-primary/20">
+                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                  style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuA5G3p8pUTYDk0bEz_Dd9ylOycmY2_5p2t4eoXk760qzPLswq_Ve1IdIvph3WvF392EBjytYXCHYUyQXmOs69Cai3nnYPuYjh4xVswbH5nnf4Il46iDoFAYi9b7TfAkEwO5VoLKRO-gj4dOJ4D6sNKDqo6rT5dK2zH5JyowWIXiiTZDleRcR7piRMfZAFAFGIodnWYE7wU7MyRuh8uNdjrhBZ4vzpjNYDQKV67HgQxQqR2ZF-d1z4ci8V_YXYuHVMg6aqvxYVUMUjw')">
+                </div>
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-surface-dark via-transparent to-transparent opacity-60">
+                </div>
+              </div>
+              <div>
+                <p
+                  class="text-white text-base md:text-lg font-bold uppercase tracking-wide group-hover:text-primary transition-colors">
+                  Google</p>
+                <p class="text-text-muted text-xs mt-1">Pixel Phones, Pixel Slate</p>
+              </div>
+            </a>
+            <a onclick="showPage('models')"
+              class="group cursor-pointer flex flex-col gap-3 bg-surface-dark border border-border-dark p-3 md:p-4 hover:border-primary/50 transition-all rounded-sm">
+              <div
+                class="w-full aspect-[4/3] bg-bg-dark rounded-sm overflow-hidden relative border border-white/5 group-hover:border-primary/20">
+                <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105"
+                  style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuAbNBm1kuNM7SHh53OPxZDnq5vj2F5UTvF2Hge71ZNMei0VhcR_D2xIsB9Aej1Nfwa2XFX6wseW9YoqE6Xx-kgS2nV1mRZDsCuqXyO1gfGgppEa5_MtY0h26mgxxCSgHA7wQFxldlEvMNR6Paho1zAslDSycZGuo9nFeZ9pQhXFABCLgl61L7VKmUQ0fYErjODg78v8v-D2BH4e4lThr83ieRojJQ-9RtyQLjlzZjjCp5OxQnUaz4I0VlqaX5W2rXVq1NriUkAoUmo')">
+                </div>
+                <div
+                  class="absolute inset-0 bg-gradient-to-t from-surface-dark via-transparent to-transparent opacity-60">
+                </div>
+              </div>
+              <div>
+                <p
+                  class="text-white text-base md:text-lg font-bold uppercase tracking-wide group-hover:text-primary transition-colors">
+                  Gaming</p>
+                <p class="text-text-muted text-xs mt-1">PlayStation, Xbox, Switch</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <!-- Trending -->
+        <div class="w-full pt-2 pb-6">
+          <div class="flex items-center gap-4 mb-4">
+            <div class="h-px bg-border-dark flex-1"></div>
+            <h3 class="text-text-muted text-xs font-bold uppercase tracking-widest">Trending Blueprints</h3>
+            <div class="h-px bg-border-dark flex-1"></div>
+          </div>
+          <div class="flex flex-wrap justify-center gap-2">
+            <button onclick="showPage('product')"
+              class="px-4 py-2 bg-surface-dark border border-border-dark rounded-full text-text-muted text-xs hover:text-primary hover:border-primary transition-colors">iPhone
+              15 Pro</button>
+            <button onclick="showPage('product')"
+              class="px-4 py-2 bg-surface-dark border border-border-dark rounded-full text-text-muted text-xs hover:text-primary hover:border-primary transition-colors">Samsung
+              S24 Ultra</button>
+            <button onclick="showPage('product')"
+              class="px-4 py-2 bg-surface-dark border border-border-dark rounded-full text-text-muted text-xs hover:text-primary hover:border-primary transition-colors">iPhone
+              14 Pro Max</button>
+            <button onclick="showPage('product')"
+              class="px-4 py-2 bg-surface-dark border border-border-dark rounded-full text-text-muted text-xs hover:text-primary hover:border-primary transition-colors">iPhone
+              13 Pro</button>
+          </div>
+        </div>
       </div>
-      <div class="modal-body" id="cartBody"></div>
-      <div class="modal-footer" id="cartFooter"></div>
+    </main>
+    <!-- Footer -->
+    <footer class="flex flex-col gap-6 px-6 py-8 text-center border-t border-border-dark bg-surface-dark/30 mt-auto">
+      <div class="flex flex-col md:flex-row justify-between items-center max-w-[1280px] w-full mx-auto gap-6">
+        <div class="flex flex-col items-center md:items-start gap-1">
+          <div class="flex items-center gap-2 text-white">
+            <span class="material-symbols-outlined text-primary">token</span>
+            <span class="font-bold tracking-widest">REPTREX LAMINATION'S</span>
+          </div>
+          <p class="text-text-muted text-xs max-w-xs text-center md:text-left">Designer laminations & premium covers
+            delivered to your door. Behror, Rajasthan.</p>
+        </div>
+        <div class="flex gap-6 text-text-muted text-sm">
+          <a href="mailto:officialrishu87@gmail.com" class="hover:text-primary transition-colors">Email</a>
+          <a href="https://wa.me/917300181886" target="_blank" class="hover:text-primary transition-colors">WhatsApp</a>
+          <a href="tel:7300181886" class="hover:text-primary transition-colors">Call</a>
+        </div>
+      </div>
+      <div class="text-text-muted/40 text-xs">© 2026 REPTREX LAMINATION'S · Behror, Rajasthan · All rights reserved.
+      </div>
+    </footer>
+  </div>
+
+  <!-- ========== PAGE 2: DEVICE MODELS ========== -->
+  <div id="page-models" class="page">
+    <main class="flex flex-1 flex-col lg:flex-row min-h-[calc(100vh-57px)]">
+      <!-- Sidebar -->
+      <aside
+        class="w-full lg:w-72 flex-shrink-0 border-b lg:border-b-0 lg:border-r border-border-dark bg-surface-darker/95">
+        <div class="p-4 pb-2">
+          <h2 class="text-slate-300 text-xs font-bold tracking-[0.2em] uppercase mb-1">Manufacturer</h2>
+          <p class="text-slate-500 text-[10px]">Select origin species</p>
+        </div>
+        <div class="flex lg:flex-col gap-1 px-3 py-2 overflow-x-auto lg:overflow-x-visible hide-scroll">
+          <button
+            class="brand-btn group flex items-center gap-3 w-full p-3 rounded bg-surface-dark border-l-4 border-primary reptile-glow transition-all flex-shrink-0">
+            <span class="material-symbols-outlined text-white text-xl">smartphone</span>
+            <span class="text-white font-bold tracking-wide text-sm">APPLE</span>
+          </button>
+          <button
+            class="brand-btn group flex items-center gap-3 w-full p-3 rounded hover:bg-surface-dark border-l-4 border-transparent hover:border-primary/50 transition-all flex-shrink-0">
+            <span class="material-symbols-outlined text-slate-400 text-xl">ad_units</span>
+            <span class="text-slate-400 font-medium tracking-wide text-sm group-hover:text-white">SAMSUNG</span>
+          </button>
+          <button
+            class="brand-btn group flex items-center gap-3 w-full p-3 rounded hover:bg-surface-dark border-l-4 border-transparent hover:border-primary/50 transition-all flex-shrink-0">
+            <span class="material-symbols-outlined text-slate-400 text-xl">android</span>
+            <span class="text-slate-400 font-medium tracking-wide text-sm group-hover:text-white">GOOGLE</span>
+          </button>
+          <button
+            class="brand-btn group flex items-center gap-3 w-full p-3 rounded hover:bg-surface-dark border-l-4 border-transparent hover:border-primary/50 transition-all flex-shrink-0">
+            <span class="material-symbols-outlined text-slate-400 text-xl">developer_board</span>
+            <span class="text-slate-400 font-medium tracking-wide text-sm group-hover:text-white">ONEPLUS</span>
+          </button>
+        </div>
+      </aside>
+      <!-- Device Grid -->
+      <section class="flex-1 flex flex-col bg-bg-dark overflow-y-auto">
+        <div
+          class="px-4 md:px-8 pt-6 pb-4 flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-border-dark/50">
+          <div>
+            <h1
+              class="text-2xl md:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400 uppercase tracking-tighter">
+              Select Specimen</h1>
+            <div class="flex items-center gap-2 text-sm text-primary mt-1">
+              <span class="material-symbols-outlined text-base">check_circle</span> Apple Series Selected
+            </div>
+          </div>
+        </div>
+        <div class="flex-1 p-4 md:p-8">
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
+            <!-- Device Cards — each links to product page -->
+            <a onclick="showPage('product')"
+              class="group cursor-pointer relative bg-surface-dark border border-border-dark rounded hover:border-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_-10px_rgba(48,215,15,0.2)]">
+              <div class="absolute top-2 right-2 z-20"><span
+                  class="inline-flex items-center px-2 py-0.5 rounded text-[9px] font-bold bg-primary text-black uppercase tracking-wide">New</span>
+              </div>
+              <div
+                class="aspect-[4/5] w-full p-4 flex items-center justify-center bg-gradient-to-b from-[#222d21] to-surface-dark">
+                <img alt="iPhone 15 Pro Max"
+                  class="h-full w-auto object-contain opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 filter grayscale group-hover:grayscale-0"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXYol4xft_AuELZcq0zcbKoA3IYaYEMVFHjI2cJQxk1ZAS-OCiaPsO7GGL81hBy34uj6meBy5NNxjRkdeoujfr9Wyp6vRC3tRqMLtWGuCt1dfOdpgIMoodM3BRWe4Pjrdt7ytF1f1IBLGInC7f0oSoajdnX4t2K9V02l1VG77stHna-AekNESJvj-jDoWlT4PttKoO6SIrVuRJcCtd4WdJ5OrU3tkWjE0zsiSfenZaSSu1SE7ZQRPZTw2SVdb99-glNt7QgZxK2TE" />
+              </div>
+              <div class="p-3 border-t border-border-dark group-hover:bg-[#202b1f] transition-colors">
+                <h3 class="text-white font-bold text-sm md:text-base mb-0.5 group-hover:text-primary transition-colors">
+                  iPhone 15 Pro Max</h3>
+                <p class="text-[10px] text-slate-400 uppercase tracking-wider">Titanium Frame</p>
+              </div>
+            </a>
+            <a onclick="showPage('product')"
+              class="group cursor-pointer relative bg-surface-dark border border-border-dark rounded hover:border-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_-10px_rgba(48,215,15,0.2)]">
+              <div
+                class="aspect-[4/5] w-full p-4 flex items-center justify-center bg-gradient-to-b from-[#222d21] to-surface-dark">
+                <img alt="iPhone 15 Pro"
+                  class="h-full w-auto object-contain opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 filter grayscale group-hover:grayscale-0"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwsTIpGwcJ0QH88OLxt2w_lHXAZLlvu2Kf9xnN1D6TBFAw_YhuAMdtYj5znEqxQ1vje7UXTyChD7TCGDyJAG6rfWOM-jd3PihrP6Y0BcDbFJunCztif81HDnEr0dHfDVvCB9XhAahIJnEo1U1mwK21K4FhtHXZp93ktVGSWONuzV1HCO8864Hj9B82BfQ4Q3uPgm40RE7nNIV4Wsw0OxZwx3M9LG2h0P8znIyH5--0WYdDd3IZq6CDymGNzGqPbW3YaPwphKv_OGc" />
+              </div>
+              <div class="p-3 border-t border-border-dark group-hover:bg-[#202b1f] transition-colors">
+                <h3 class="text-white font-bold text-sm md:text-base mb-0.5 group-hover:text-primary transition-colors">
+                  iPhone 15 Pro</h3>
+                <p class="text-[10px] text-slate-400 uppercase tracking-wider">Flagship</p>
+              </div>
+            </a>
+            <a onclick="showPage('product')"
+              class="group cursor-pointer relative bg-surface-dark border border-border-dark rounded hover:border-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_-10px_rgba(48,215,15,0.2)]">
+              <div class="absolute top-2 right-2 z-20"><span
+                  class="inline-flex items-center px-2 py-0.5 rounded text-[9px] font-bold bg-border-dark text-slate-300 uppercase tracking-wide">Best
+                  Seller</span></div>
+              <div
+                class="aspect-[4/5] w-full p-4 flex items-center justify-center bg-gradient-to-b from-[#222d21] to-surface-dark">
+                <img alt="iPhone 14 Pro Max"
+                  class="h-full w-auto object-contain opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 filter grayscale group-hover:grayscale-0"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ7ih2t9Ez6i78y-W6anKGo0fnjdxwWtqwq1YPP78cMBTXK_eE1Uq4Q3Z36ltc-McYUdGxRI5W2Dn-6WnLHxKiKuyp1ATxLKhmHANIYWsUuVk0rSmjAKNX4l7xuwa1vEUBAUCPEpWJWPB8NeDMtMacZKqUP5eHAUHUZhapBftWChRc8gdsc9f38-JKXk7ISnD8Rm7NuK6MULDfErtkHDVlaSZFVblcMQh78RUhNAFIxSp-eURTHH0g2ybufVWfEt86GD8mhe_wx5g" />
+              </div>
+              <div class="p-3 border-t border-border-dark group-hover:bg-[#202b1f] transition-colors">
+                <h3 class="text-white font-bold text-sm md:text-base mb-0.5 group-hover:text-primary transition-colors">
+                  iPhone 14 Pro Max</h3>
+                <p class="text-[10px] text-slate-400 uppercase tracking-wider">Dynamic Island</p>
+              </div>
+            </a>
+            <a onclick="showPage('product')"
+              class="group cursor-pointer relative bg-surface-dark border border-border-dark rounded hover:border-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_-10px_rgba(48,215,15,0.2)]">
+              <div
+                class="aspect-[4/5] w-full p-4 flex items-center justify-center bg-gradient-to-b from-[#222d21] to-surface-dark">
+                <img alt="iPhone 13 Pro"
+                  class="h-full w-auto object-contain opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 filter grayscale group-hover:grayscale-0"
+                  src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrNCsZHWFCt3c2oFQG8xEx_wwKKNg7bnmA4iRX5RCZY10EajovuaTDta5B4Ca3ctgqLQRmPJsDZ6D9g5zA6x3qNoIdefXy20mDj4hKd5BTpB7NC5FkINZWRWlQIpHpfEoSM_LgCXse3TxdMIouk3iYaaw-SDRijFLG8585jlY8LlMskX8WaERkfhECJmHI9F1f5e5dfqMD6UPZketvnl4MFSNBbexDt6xTtw02dgAW-c13L3V64W6wmQgcj1id2uKRvTHhi3SOpdI" />
+              </div>
+              <div class="p-3 border-t border-border-dark group-hover:bg-[#202b1f] transition-colors">
+                <h3 class="text-white font-bold text-sm md:text-base mb-0.5 group-hover:text-primary transition-colors">
+                  iPhone 13 Pro</h3>
+                <p class="text-[10px] text-slate-400 uppercase tracking-wider">Classic</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- ========== PAGE 3: PRODUCT / VAULT ========== -->
+  <div id="page-product" class="page">
+    <main class="flex-1 flex flex-col lg:flex-row min-h-[calc(100vh-57px)]">
+      <!-- Left: Product Image -->
+      <section
+        class="relative w-full lg:w-3/5 bg-neutral-900 flex items-center justify-center overflow-hidden group min-h-[50vh] lg:min-h-0">
+        <div
+          class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-transparent to-neutral-900/50 pointer-events-none z-10">
+        </div>
+        <div class="absolute top-4 left-4 z-20 flex gap-2 text-sm">
+          <a onclick="showPage('models')" class="text-text-muted hover:text-white cursor-pointer">Devices</a>
+          <span class="text-slate-600">/</span>
+          <span class="text-primary">iPhone 13–17 Pro Cover</span>
+        </div>
+        <div
+          class="relative z-10 w-full max-w-md h-[50vh] lg:h-[80vh] transition-transform duration-700 group-hover:scale-105">
+          <div class="w-full h-full bg-center bg-contain bg-no-repeat"
+            style="background-image:url('https://i.ibb.co/bjZwD2vJ/61-Cgge-ORgz-L-AC-UF1000-1000-QL80-FMwebp.webp')">
+          </div>
+        </div>
+      </section>
+      <!-- Right: Config Panel -->
+      <aside class="w-full lg:w-2/5 bg-neutral-800 border-l border-neutral-700 flex flex-col">
+        <div class="px-6 py-6 border-b border-neutral-700">
+          <div class="flex justify-between items-start">
+            <div>
+              <h1 class="text-2xl md:text-3xl font-bold text-white tracking-tight">Premium Leather Cover</h1>
+              <p class="text-text-muted text-sm mt-1">iPhone 13 to iPhone 17 Pro · Original</p>
+            </div>
+            <div class="text-right">
+              <span class="block text-2xl font-bold text-primary">₹800</span>
+              <span class="text-xs text-slate-500">+₹80 delivery</span>
+            </div>
+          </div>
+        </div>
+        <div class="flex-1 overflow-y-auto p-6 space-y-6">
+          <!-- Texture Selector -->
+          <div>
+            <h3 class="text-sm font-bold text-white uppercase tracking-wider flex items-center gap-2 mb-4">
+              <span class="w-1 h-4 bg-primary rounded-sm"></span> Select Style
+            </h3>
+            <div class="flex border-b border-border-dark gap-6 mb-4">
+              <button class="pb-3 text-white text-sm font-bold border-b-2 border-white">Premium</button>
+              <button class="pb-3 text-slate-400 hover:text-white text-sm font-medium transition-colors">Carbon</button>
+              <button
+                class="pb-3 text-slate-400 hover:text-white text-sm font-medium transition-colors">Leather</button>
+            </div>
+            <div class="grid grid-cols-4 gap-3">
+              <div class="flex flex-col items-center gap-1.5 cursor-pointer group">
+                <div
+                  class="w-14 h-14 clip-hex bg-neutral-700 relative flex items-center justify-center ring-2 ring-primary ring-offset-2 ring-offset-neutral-800">
+                  <div class="absolute inset-0 bg-cover bg-center opacity-80"
+                    style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuB8_NNKoy8rvgqhxMUM0Ny-LWF6P73iMJpzlO3hd_ZI4KkaispZLlLk5FRqRuxUIVBOs6SRfQIRn9kFFiU55n_OiTCY1V5XpfUbR8DjlNnOuCRa3ghu8JRoZgRUUCxDLZXxmgAXNWrnr4IuaMnzimWUR6cOVtRDb9NI7joqE1oFfqQ_rtb5mU60Dtm6iiEZzfMzv9rPaCjkv27a2hRxd0FCfs1LR_T7pjthtEBfoCnFGKhxYo7vgu3CibWJ0cdQqjwxF7VkJWl6Z4w')">
+                  </div>
+                  <span class="material-symbols-outlined text-white z-10 drop-shadow-md text-lg">check</span>
+                </div>
+                <span class="text-[10px] text-primary font-medium">Classic</span>
+              </div>
+              <div class="flex flex-col items-center gap-1.5 cursor-pointer group">
+                <div class="w-14 h-14 clip-hex bg-neutral-700 relative transition-transform group-hover:scale-110">
+                  <div class="absolute inset-0 bg-cover bg-center opacity-60"
+                    style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuD1GZu-2KQf4v7B-zt5_itvfOg1qaYHEDl59FRF08KXqY8v2hAi_GGR-nBcX9fYda-cBQriYJ0JbvvdVZXdmqUVvOGUqHTkmfyvMWhMs-d-yQEhhaCpNP7KziUhyDypq1SYTTgnRpUlFD3Mw0qkkzk57nQble8T0VlLHBfN0qdvVRuSFCdTSlK5lY83jodmWiZKg96ONyPgXcOTJBhLPTvQYWelStHWHT3aJjDwZ5nxbEnxX8U7ORM8AOGPF0CMwlo3qii4jbEiDIg')">
+                  </div>
+                </div>
+                <span class="text-[10px] text-slate-400 group-hover:text-white">Matrix</span>
+              </div>
+              <div class="flex flex-col items-center gap-1.5 cursor-pointer group">
+                <div class="w-14 h-14 clip-hex bg-neutral-700 relative transition-transform group-hover:scale-110">
+                  <div class="absolute inset-0 bg-cover bg-center opacity-60"
+                    style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuDx0-yPiUZodlPFgDEtuSZWaNy1TmjlPPF34jjshYRMbHMFhamkELHixnBsh39dCaqW1VR8oydmtNlvxPKHnuvQR2kmctCfweRhyewFFPvrZMRsgsy_VB1Pwz88sE69e9IKzizLRmkReFarfs5CCTSDo9j3MVWvW1Q89S-GS5ufDldZHnKBS9RsRaffihvs7jCJIXXHFBvKG67b7LubEt6MvVpTLEfE-I4ZZw8sgdvJtSmHRqBtxg2GQCS_C82yQTfvsV0MA8DRuFM')">
+                  </div>
+                </div>
+                <span class="text-[10px] text-slate-400 group-hover:text-white">Obsidian</span>
+              </div>
+              <div class="flex flex-col items-center gap-1.5 cursor-pointer group">
+                <div class="w-14 h-14 clip-hex bg-neutral-700 relative transition-transform group-hover:scale-110">
+                  <div class="absolute inset-0 bg-cover bg-center opacity-60"
+                    style="background-image:url('https://lh3.googleusercontent.com/aida-public/AB6AXuCYxD9Ggreaht-Rq5KrUGnN4hhhvdDPFOJsjVPEh5cF6WS1r2p1bnDxT0uYPAa-o-LJ23Ex4VaOXTsDxyKPpw-SDrWEA3U4Lxa6QTOesV3lMsJAGvv9NEE2jcHdnhEouf6wUmAgU5tslnaPvtNGFk6faMFX0nsTMdALNx-R2RC1s5XdWVEqJ9UASbHdkmDQiFVJZf31ZQ_fHFlA2_xUYmvO0NimtudGXjr1c6gHrXOao032D_iINucS4Ud27jvKKqfp5_wo48V0Wr8')">
+                  </div>
+                </div>
+                <span class="text-[10px] text-slate-400 group-hover:text-white">Cyber</span>
+              </div>
+            </div>
+          </div>
+          <!-- Material Stats -->
+          <div class="pt-4 border-t border-neutral-700/50 space-y-3">
+            <h3 class="text-xs font-bold text-slate-500 uppercase tracking-widest mb-2">Material Stats</h3>
+            <div>
+              <div class="flex justify-between text-xs mb-1"><span class="text-slate-300">Scratch Resistance</span><span
+                  class="text-primary font-mono">98%</span></div>
+              <div class="h-1.5 w-full bg-neutral-900 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-primary/40 to-primary w-[98%] rounded-full"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs mb-1"><span class="text-slate-300">Grip Level</span><span
+                  class="text-primary font-mono">High</span></div>
+              <div class="h-1.5 w-full bg-neutral-900 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-primary/40 to-primary w-[75%] rounded-full"></div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between text-xs mb-1"><span class="text-slate-300">Thickness</span><span
+                  class="text-primary font-mono">0.22mm</span></div>
+              <div class="h-1.5 w-full bg-neutral-900 rounded-full overflow-hidden">
+                <div class="h-full bg-gradient-to-r from-primary/40 to-primary w-[20%] rounded-full"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- CTA -->
+        <div class="border-t border-neutral-700 p-6">
+          <div class="flex items-center justify-between mb-3 text-xs text-text-muted">
+            <span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">verified</span>
+              Premium Quality</span>
+            <span class="flex items-center gap-1"><span
+                class="material-symbols-outlined text-base">local_shipping</span> Door Delivery</span>
+          </div>
+          <button onclick="addProductToCart()" id="mainAddBtn"
+            class="w-full relative group overflow-hidden rounded bg-primary py-4 px-6 flex items-center justify-center gap-2 transition-all hover:shadow-[0_0_20px_rgba(48,215,15,0.4)]">
+            <div
+              class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+            </div>
+            <span
+              class="material-symbols-outlined text-bg-dark font-bold transition-transform group-hover:rotate-12">shopping_bag</span>
+            <span class="text-bg-dark font-bold text-lg uppercase tracking-wide relative z-10">Add to Cart — ₹880</span>
+          </button>
+        </div>
+      </aside>
+    </main>
+  </div>
+
+  <!-- ========== CART MODAL ========== -->
+  <div class="modal-bg" id="cartModal">
+    <div class="modal-panel">
+      <div class="w-9 h-1 rounded bg-border-dark mx-auto mt-3"></div>
+      <div class="flex items-center justify-between px-5 py-3">
+        <h2 class="text-lg font-bold text-white">Your Cart</h2>
+        <button onclick="closeCart()" class="text-slate-400 hover:text-red-400 text-xl transition-colors">✕</button>
+      </div>
+      <div class="flex-1 overflow-y-auto px-5 pb-4" id="cartBody"></div>
+      <div class="border-t border-border-dark px-5 py-4" id="cartFooter"></div>
     </div>
   </div>
 
-  <!-- ===== CHECKOUT MODAL ===== -->
-  <div class="modal-overlay" id="checkoutModal">
-    <div class="modal">
-      <div class="modal-bar"></div>
-      <div class="modal-header">
-        <h2>Place Order</h2>
-        <button class="modal-close" onclick="closeCheckout()">✕</button>
+  <!-- ========== CHECKOUT MODAL ========== -->
+  <div class="modal-bg" id="checkoutModal">
+    <div class="modal-panel">
+      <div class="w-9 h-1 rounded bg-border-dark mx-auto mt-3"></div>
+      <div class="flex items-center justify-between px-5 py-3">
+        <h2 class="text-lg font-bold text-white">Place Order</h2>
+        <button onclick="closeCheckout()" class="text-slate-400 hover:text-red-400 text-xl transition-colors">✕</button>
       </div>
-      <div class="modal-body" id="checkoutView"></div>
+      <div class="flex-1 overflow-y-auto px-5 pb-4" id="checkoutView"></div>
     </div>
   </div>
+
+  <!-- ========== WHATSAPP FAB ========== -->
+  <a href="https://wa.me/917300181886?text=Hi%20REPTREX!%20I%20have%20a%20query." target="_blank"
+    class="fixed bottom-6 right-4 z-50 w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center text-2xl shadow-lg hover:scale-110 transition-transform"
+    title="Chat on WhatsApp">💬</a>
 
   <script>
-    // ===== PRODUCT DATA =====
-    const PRODUCTS = [
-      {
-        id: 1,
-        name: "iPhone 13 to iPhone 17 Pro Original Premium Leather Cover",
-        price: 800,
-        delivery: 80,
-        category: "Premium Covers",
-        image: "https://i.ibb.co/bjZwD2vJ/61-Cgge-ORgz-L-AC-UF1000-1000-QL80-FMwebp.webp",
-        desc: "AI Generated Premium Designer Leather Cover"
-      }
-      // ➕ Add more products here in the same format
-    ];
+    // ===== SPA NAVIGATION =====
+    function showPage(id) {
+      document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+      document.getElementById('page-' + id).classList.add('active');
+      document.querySelectorAll('.nav-link').forEach(a => {
+        a.classList.toggle('text-primary', a.dataset.page === id);
+        a.classList.toggle('text-text-muted', a.dataset.page !== id);
+      });
+      window.scrollTo(0, 0);
+    }
 
-    // ===== CART STATE =====
+    // ===== PRODUCT DATA =====
+    const PRODUCT = { id: 1, name: "iPhone 13–17 Pro Premium Leather Cover", price: 800, delivery: 80, image: "https://i.ibb.co/bjZwD2vJ/61-Cgge-ORgz-L-AC-UF1000-1000-QL80-FMwebp.webp" };
+
+    // ===== CART =====
     let cart = JSON.parse(localStorage.getItem('reptrex_cart') || '[]');
 
-    // ===== RENDER PRODUCTS =====
-    function renderProducts(filter = 'all') {
-      const grid = document.getElementById('productsGrid');
-      const list = filter === 'all' ? PRODUCTS : PRODUCTS.filter(p => p.category === filter);
-      grid.innerHTML = list.map((p, i) => `
-    <div class="p-card" style="animation-delay:${i * .06}s">
-      <div class="p-card-img">
-        <img src="${p.image}" alt="${p.name}" loading="lazy">
-        <span class="category-tag">${p.category}</span>
-      </div>
-      <div class="p-card-body">
-        <h3>${p.name}</h3>
-        <p class="p-desc">${p.desc}</p>
-        <div class="p-card-price">
-          <span class="main">₹${p.price}</span>
-          <span class="del-fee">+₹${p.delivery} delivery</span>
-        </div>
-        <button class="atc-btn" id="atc${p.id}" onclick="addToCart(${p.id})">Add to Cart</button>
-      </div>
-    </div>
-  `).join('');
-    }
-
-    // ===== CATEGORY TABS =====
-    document.getElementById('catTabs').addEventListener('click', e => {
-      if (!e.target.classList.contains('cat-tab')) return;
-      document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
-      e.target.classList.add('active');
-      renderProducts(e.target.dataset.cat);
-    });
-
-    // ===== CART FUNCTIONS =====
-    function saveCart() {
-      localStorage.setItem('reptrex_cart', JSON.stringify(cart));
-      updateBadge();
-    }
+    function saveCart() { localStorage.setItem('reptrex_cart', JSON.stringify(cart)); updateBadge(); }
     function updateBadge() {
       const b = document.getElementById('cartBadge');
       const c = cart.reduce((s, i) => s + i.qty, 0);
       b.textContent = c;
-      b.style.display = c > 0 ? 'flex' : 'none';
+      if (c > 0) { b.classList.remove('hidden'); b.classList.add('flex'); } else { b.classList.add('hidden'); b.classList.remove('flex'); }
     }
-    function addToCart(id) {
-      const p = PRODUCTS.find(x => x.id === id);
-      const ex = cart.find(x => x.id === id);
-      if (ex) ex.qty++; else cart.push({ id: p.id, name: p.name, price: p.price, delivery: p.delivery, image: p.image, qty: 1 });
+    function addProductToCart() {
+      const ex = cart.find(i => i.id === PRODUCT.id);
+      if (ex) ex.qty++; else cart.push({ ...PRODUCT, qty: 1 });
       saveCart();
-      const btn = document.getElementById('atc' + id);
-      btn.textContent = '✓ Added';
-      btn.classList.add('added');
-      setTimeout(() => { btn.textContent = 'Add to Cart'; btn.classList.remove('added'); }, 1000);
+      const btn = document.getElementById('mainAddBtn');
+      btn.querySelector('span:last-child').textContent = '✓ Added to Cart!';
+      setTimeout(() => btn.querySelector('span:last-child').textContent = 'Add to Cart — ₹880', 1200);
     }
-    function removeFromCart(id) {
-      cart = cart.filter(i => i.id !== id);
-      saveCart(); renderCart();
-    }
+    function removeFromCart(id) { cart = cart.filter(i => i.id !== id); saveCart(); renderCart(); }
     function changeQty(id, d) {
       const item = cart.find(i => i.id === id);
       if (!item) return;
@@ -1123,43 +650,37 @@
     }
     function grandTotal() { return cart.reduce((s, i) => s + (i.price + i.delivery) * i.qty, 0); }
 
-    // ===== RENDER CART =====
     function renderCart() {
       const body = document.getElementById('cartBody');
       const foot = document.getElementById('cartFooter');
       if (!cart.length) {
-        body.innerHTML = '<div class="cart-empty"><div class="ce-icon">🛒</div><p>Your cart is empty</p></div>';
+        body.innerHTML = '<div class="text-center py-10 text-text-muted"><div class="text-4xl mb-3 opacity-30">🛒</div><p>Your cart is empty</p></div>';
         foot.innerHTML = ''; return;
       }
-      body.innerHTML = cart.map(i => `
-    <div class="ci">
-      <img src="${i.image}" alt="${i.name}">
-      <div class="ci-info">
-        <h4>${i.name}</h4>
-        <div class="ci-price">₹${i.price} + ₹${i.delivery} delivery</div>
-        <div class="ci-sub">Subtotal: ₹${(i.price + i.delivery) * i.qty}</div>
-        <div class="ci-actions">
-          <button class="qty-b" onclick="changeQty(${i.id},-1)">−</button>
-          <span class="qty-v">${i.qty}</span>
-          <button class="qty-b" onclick="changeQty(${i.id},1)">+</button>
-          <button class="rm-btn" onclick="removeFromCart(${i.id})">Remove</button>
-        </div>
+      body.innerHTML = cart.map(i => `<div class="flex gap-3 py-3 border-b border-border-dark">
+    <img src="${i.image}" class="w-12 h-12 rounded object-cover border border-border-dark flex-shrink-0">
+    <div class="flex-1 min-w-0">
+      <h4 class="text-sm font-bold text-white truncate">${i.name}</h4>
+      <p class="text-xs text-primary">₹${i.price} + ₹${i.delivery} delivery</p>
+      <p class="text-[10px] text-text-muted">Subtotal: ₹${(i.price + i.delivery) * i.qty}</p>
+      <div class="flex items-center gap-2 mt-1">
+        <button onclick="changeQty(${i.id},-1)" class="w-6 h-6 rounded-full border border-border-dark bg-surface-dark text-white flex items-center justify-center text-xs hover:bg-primary hover:text-bg-dark transition-colors">−</button>
+        <span class="text-sm font-bold">${i.qty}</span>
+        <button onclick="changeQty(${i.id},1)" class="w-6 h-6 rounded-full border border-border-dark bg-surface-dark text-white flex items-center justify-center text-xs hover:bg-primary hover:text-bg-dark transition-colors">+</button>
+        <button onclick="removeFromCart(${i.id})" class="ml-auto text-red-400 text-[10px] uppercase font-bold opacity-60 hover:opacity-100">Remove</button>
       </div>
     </div>
-  `).join('');
-      foot.innerHTML = `
-    <div class="gt-row"><span>Grand Total</span><span>₹${grandTotal()}</span></div>
-    <button class="co-btn" onclick="openCheckout()">Proceed to Order →</button>
-  `;
+  </div>`).join('');
+      foot.innerHTML = `<div class="flex justify-between text-lg font-bold text-white mb-3"><span>Total</span><span>₹${grandTotal()}</span></div>
+    <button onclick="openCheckout()" class="w-full py-3 rounded bg-primary text-bg-dark font-bold uppercase tracking-wide hover:shadow-[0_0_20px_rgba(48,215,15,0.4)] transition-all">Proceed to Order →</button>`;
     }
 
-    // ===== MODALS =====
     function openCart() { renderCart(); document.getElementById('cartModal').classList.add('open'); }
     function closeCart() { document.getElementById('cartModal').classList.remove('open'); }
     function closeCheckout() { document.getElementById('checkoutModal').classList.remove('open'); }
-    document.querySelectorAll('.modal-overlay').forEach(m => {
-      m.addEventListener('click', e => { if (e.target === m) m.classList.remove('open'); });
-    });
+
+    // Close on overlay click
+    document.querySelectorAll('.modal-bg').forEach(m => m.addEventListener('click', e => { if (e.target === m) m.classList.remove('open'); }));
 
     // ===== CHECKOUT =====
     function openCheckout() {
@@ -1167,49 +688,40 @@
       const v = document.getElementById('checkoutView');
       const lines = cart.map(i => `${i.name} x${i.qty} = ₹${(i.price + i.delivery) * i.qty}`).join('\n');
       const summary = lines + '\n\nGrand Total: ₹' + grandTotal();
-      v.innerHTML = `
-    <form class="ck-form" id="orderForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-      <div class="fg"><label>Your Name *</label>
-        <input type="text" name="customer_name" required placeholder="Full name"></div>
-      <div class="fg"><label>Phone Number *</label>
-        <input type="tel" name="phone" required placeholder="e.g. 9876543210" pattern="[0-9]{10}" title="Enter 10-digit number"></div>
-      <div class="fg"><label>Delivery Address *</label>
-        <textarea name="address" required placeholder="Full address with pincode"></textarea></div>
-      <div class="fg"><label>Mobile Model (for fitting) *</label>
-        <input type="text" name="mobile_model" required placeholder="e.g. iPhone 15 Pro Max"></div>
-      <div class="fg"><label>Order Summary</label>
-        <div class="os-box">${summary}</div></div>
-      <input type="hidden" name="order_details" value="${summary.replace(/"/g, '&quot;')}">
-      <input type="hidden" name="_subject" value="🛒 New Order — REPTREX LAMINATION'S">
-      <button type="submit" class="so-btn">✅ Place Order</button>
-      <p style="text-align:center;font-size:.68rem;color:var(--text-dim);margin-top:6px">
-        Or order directly via
-        <a href="https://wa.me/917300181886?text=${encodeURIComponent('Hi! I want to order:\n\n' + summary)}" target="_blank" style="color:#25D366;font-weight:700">WhatsApp →</a>
-      </p>
-    </form>
-  `;
+      v.innerHTML = `<form class="flex flex-col gap-3" id="orderForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <div><label class="block text-[10px] font-bold text-text-muted uppercase tracking-wider mb-1">Your Name *</label>
+      <input type="text" name="customer_name" required placeholder="Full name" class="w-full px-3 py-2.5 rounded bg-surface-dark border border-border-dark text-white text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none"></div>
+    <div><label class="block text-[10px] font-bold text-text-muted uppercase tracking-wider mb-1">Phone *</label>
+      <input type="tel" name="phone" required placeholder="e.g. 9876543210" pattern="[0-9]{10}" class="w-full px-3 py-2.5 rounded bg-surface-dark border border-border-dark text-white text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none"></div>
+    <div><label class="block text-[10px] font-bold text-text-muted uppercase tracking-wider mb-1">Delivery Address *</label>
+      <textarea name="address" required placeholder="Full address with pincode" class="w-full px-3 py-2.5 rounded bg-surface-dark border border-border-dark text-white text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none resize-y min-h-[50px]"></textarea></div>
+    <div><label class="block text-[10px] font-bold text-text-muted uppercase tracking-wider mb-1">Mobile Model *</label>
+      <input type="text" name="mobile_model" required placeholder="e.g. iPhone 15 Pro Max" class="w-full px-3 py-2.5 rounded bg-surface-dark border border-border-dark text-white text-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none"></div>
+    <div><label class="block text-[10px] font-bold text-text-muted uppercase tracking-wider mb-1">Order Summary</label>
+      <div class="bg-surface-dark border border-border-dark rounded p-3 text-xs text-text-muted max-h-[100px] overflow-y-auto whitespace-pre-wrap">${summary}</div></div>
+    <input type="hidden" name="order_details" value="${summary.replace(/"/g, '&quot;')}">
+    <input type="hidden" name="_subject" value="🛒 New Order — REPTREX LAMINATION'S">
+    <button type="submit" class="w-full py-3 rounded bg-primary text-bg-dark font-bold uppercase tracking-wide hover:shadow-[0_0_20px_rgba(48,215,15,0.4)] transition-all">✅ Place Order</button>
+    <p class="text-center text-[11px] text-text-muted">Or order via <a href="https://wa.me/917300181886?text=${encodeURIComponent('Hi! Order:\n\n' + summary)}" target="_blank" class="text-[#25D366] font-bold">WhatsApp →</a></p>
+  </form>`;
       document.getElementById('checkoutModal').classList.add('open');
       document.getElementById('orderForm').addEventListener('submit', function (e) {
         e.preventDefault();
-        const fd = new FormData(e.target);
-        fetch(e.target.action, { method: 'POST', body: fd, headers: { 'Accept': 'application/json' } })
-          .then(r => { if (r.ok) { cart = []; saveCart(); showSuccess(); } else alert('Error — try WhatsApp instead!'); })
+        fetch(e.target.action, { method: 'POST', body: new FormData(e.target), headers: { 'Accept': 'application/json' } })
+          .then(r => { if (r.ok) { cart = []; saveCart(); showSuccess(); } else alert('Error — try WhatsApp!'); })
           .catch(() => alert('Network error — try WhatsApp!'));
       });
     }
     function showSuccess() {
-      document.getElementById('checkoutView').innerHTML = `
-    <div class="sv">
-      <div class="sv-icon">✅</div>
-      <h3>Order Placed!</h3>
-      <p>REPTREX LAMINATION'S will contact you on WhatsApp to confirm your order.</p>
-      <a class="wa-btn" href="https://wa.me/917300181886?text=Hi!%20I%20just%20placed%20an%20order." target="_blank">💬 Message on WhatsApp</a>
-    </div>
-  `;
+      document.getElementById('checkoutView').innerHTML = `<div class="text-center py-8">
+    <div class="text-5xl mb-3">✅</div>
+    <h3 class="text-xl font-bold text-white mb-2">Order Placed!</h3>
+    <p class="text-sm text-text-muted mb-4">REPTREX LAMINATION'S will contact you on WhatsApp to confirm.</p>
+    <a href="https://wa.me/917300181886?text=Hi!%20I%20just%20placed%20an%20order." target="_blank" class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#25D366] text-white font-bold hover:scale-105 transition-transform">💬 Message on WhatsApp</a>
+  </div>`;
     }
 
     // ===== INIT =====
-    renderProducts();
     updateBadge();
   </script>
 </body>

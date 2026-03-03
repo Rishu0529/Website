@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>REPTREX Hatchery Model Finder</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#30d70f",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#121811",
+                        "surface-dark": "#1a2319",
+                        "surface-darker": "#0d110c",
+                        "accent-silver": "#e2e8f0",
+                    },
+                    fontFamily: {
+                        display: ["Space Grotesk", "sans-serif"],
+                    },
+                    backgroundImage: {
+                        'carbon-fiber': "radial-gradient(circle at center, #1a2319 1px, transparent 1px), radial-gradient(circle at center, #1a2319 1px, transparent 1px)",
+                    },
+                    backgroundSize: {
+                        'carbon-fiber': '20px 20px',
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        .carbon-bg {
+            background-color: #0d110c;
+            background-image: 
+                linear-gradient(45deg, #131a12 25%, transparent 25%, transparent 75%, #131a12 75%, #131a12), 
+                linear-gradient(45deg, #131a12 25%, transparent 25%, transparent 75%, #131a12 75%, #131a12);
+            background-position: 0 0, 10px 10px;
+            background-size: 20px 20px;
+        }
+        .reptile-glow {
+            box-shadow: 0 0 15px rgba(48, 215, 15, 0.3);
+        }
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-slate-100 font-display min-h-screen flex flex-col overflow-hidden">
+<!-- Top Navigation -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-[#2b3928] bg-surface-darker px-8 py-4 z-50">
+<div class="flex items-center gap-4 text-white">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined !text-3xl">change_history</span>
+</div>
+<h2 class="text-white text-2xl font-bold leading-tight tracking-wider">REPTREX</h2>
+</div>
+<div class="flex flex-1 justify-end gap-8">
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-slate-400 hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest" href="#">Home</a>
+<a class="text-white text-sm font-medium uppercase tracking-widest border-b-2 border-primary pb-1" href="#">Hatchery</a>
+<a class="text-slate-400 hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest" href="#">Shed</a>
+<a class="text-slate-400 hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest" href="#">Molting</a>
+</nav>
+<div class="flex gap-4 items-center">
+<a class="text-slate-400 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+</a>
+<button class="flex items-center justify-center overflow-hidden rounded bg-primary text-background-dark h-9 px-6 text-xs font-bold uppercase tracking-widest hover:bg-white transition-colors">
+<span class="truncate">Login</span>
+</button>
+</div>
+</div>
+</header>
+<!-- Main Content Area -->
+<main class="flex flex-1 overflow-hidden relative">
+<!-- Carbon Fiber Texture Overlay -->
+<div class="absolute inset-0 carbon-bg opacity-40 pointer-events-none z-0"></div>
+<!-- Left Panel: Brand Selector -->
+<aside class="w-80 flex flex-col border-r border-[#2b3928] bg-surface-darker/95 backdrop-blur-sm z-10 relative">
+<div class="p-6 pb-2">
+<h1 class="text-accent-silver text-xs font-bold tracking-[0.2em] uppercase mb-1">Manufacturer</h1>
+<p class="text-slate-500 text-xs">Select origin species</p>
+</div>
+<div class="flex-1 overflow-y-auto scrollbar-hide py-2">
+<div class="flex flex-col gap-1 px-3">
+<!-- Active Item -->
+<button class="group flex items-center justify-between w-full p-4 rounded bg-[#1a2319] border-l-4 border-primary reptile-glow transition-all">
+<div class="flex items-center gap-4">
+<span class="material-symbols-outlined text-white">smartphone</span>
+<span class="text-white font-bold tracking-wide">APPLE</span>
+</div>
+<span class="material-symbols-outlined text-primary text-sm">chevron_right</span>
+</button>
+<!-- Inactive Items -->
+<button class="group flex items-center justify-between w-full p-4 rounded hover:bg-[#1a2319] border-l-4 border-transparent hover:border-primary/50 transition-all">
+<div class="flex items-center gap-4 text-slate-400 group-hover:text-white">
+<span class="material-symbols-outlined">ad_units</span>
+<span class="font-medium tracking-wide">SAMSUNG</span>
+</div>
+</button>
+<button class="group flex items-center justify-between w-full p-4 rounded hover:bg-[#1a2319] border-l-4 border-transparent hover:border-primary/50 transition-all">
+<div class="flex items-center gap-4 text-slate-400 group-hover:text-white">
+<span class="material-symbols-outlined">android</span>
+<span class="font-medium tracking-wide">GOOGLE</span>
+</div>
+</button>
+<button class="group flex items-center justify-between w-full p-4 rounded hover:bg-[#1a2319] border-l-4 border-transparent hover:border-primary/50 transition-all">
+<div class="flex items-center gap-4 text-slate-400 group-hover:text-white">
+<span class="material-symbols-outlined">developer_board</span>
+<span class="font-medium tracking-wide">ONEPLUS</span>
+</div>
+</button>
+<button class="group flex items-center justify-between w-full p-4 rounded hover:bg-[#1a2319] border-l-4 border-transparent hover:border-primary/50 transition-all">
+<div class="flex items-center gap-4 text-slate-400 group-hover:text-white">
+<span class="material-symbols-outlined">gamepad</span>
+<span class="font-medium tracking-wide">SONY</span>
+</div>
+</button>
+<button class="group flex items-center justify-between w-full p-4 rounded hover:bg-[#1a2319] border-l-4 border-transparent hover:border-primary/50 transition-all">
+<div class="flex items-center gap-4 text-slate-400 group-hover:text-white">
+<span class="material-symbols-outlined">videogame_asset</span>
+<span class="font-medium tracking-wide">CONSOLES</span>
+</div>
+</button>
+<button class="group flex items-center justify-between w-full p-4 rounded hover:bg-[#1a2319] border-l-4 border-transparent hover:border-primary/50 transition-all">
+<div class="flex items-center gap-4 text-slate-400 group-hover:text-white">
+<span class="material-symbols-outlined">laptop_mac</span>
+<span class="font-medium tracking-wide">LAPTOPS</span>
+</div>
+</button>
+</div>
+</div>
+<div class="p-4 border-t border-[#2b3928]">
+<div class="bg-primary/10 rounded p-3 border border-primary/20">
+<div class="flex items-center gap-2 text-primary mb-1">
+<span class="material-symbols-outlined text-sm">info</span>
+<span class="text-xs font-bold uppercase">Pro Tip</span>
+</div>
+<p class="text-[10px] text-slate-400 leading-relaxed">
+                        Cannot find your model? Request a custom measurement kit from the Shed.
+                    </p>
+</div>
+</div>
+</aside>
+<!-- Right Panel: Device Grid -->
+<section class="flex-1 flex flex-col relative z-10 overflow-hidden bg-gradient-to-br from-background-dark/80 to-background-dark/95">
+<!-- Header & Search -->
+<div class="px-8 pt-8 pb-4 flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#2b3928]/50">
+<div>
+<h1 class="text-4xl font-bold text-white mb-2 tracking-tighter uppercase metallic-text bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-slate-400">
+                        Select Specimen
+                    </h1>
+<div class="flex items-center gap-2 text-sm text-primary">
+<span class="material-symbols-outlined text-base">check_circle</span>
+<span>Apple Series Selected</span>
+</div>
+</div>
+<div class="w-full md:w-96 relative group">
+<div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-slate-500 group-focus-within:text-primary transition-colors">search</span>
+</div>
+<input class="block w-full pl-10 pr-3 py-3 border border-[#2b3928] rounded leading-5 bg-[#1a2319] text-slate-100 placeholder-slate-500 focus:outline-none focus:bg-background-dark focus:border-primary focus:ring-1 focus:ring-primary sm:text-sm transition-all" placeholder="Scan for device model (e.g. iPhone 15)..." type="text"/>
+<div class="absolute inset-y-0 right-0 pr-3 flex items-center">
+<kbd class="hidden sm:inline-block border border-[#2b3928] rounded px-2 text-[10px] font-mono font-medium text-slate-500">CMD+K</kbd>
+</div>
+</div>
+</div>
+<!-- Device Grid -->
+<div class="flex-1 overflow-y-auto p-8 scrollbar-hide">
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-6">
+<!-- Card 1 -->
+<a class="group relative bg-[#1a2319] border border-[#2b3928] rounded hover:border-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_-10px_rgba(48,215,15,0.2)]" href="#">
+<div class="absolute top-3 right-3 z-20">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-primary text-black uppercase tracking-wide">New</span>
+</div>
+<div class="aspect-[4/5] w-full p-6 flex items-center justify-center bg-gradient-to-b from-[#222d21] to-[#1a2319]">
+<img alt="iPhone 15 Pro Max" class="h-full w-auto object-contain mix-blend-overlay opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 filter grayscale group-hover:grayscale-0" data-alt="iPhone 15 Pro Max back view" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAXYol4xft_AuELZcq0zcbKoA3IYaYEMVFHjI2cJQxk1ZAS-OCiaPsO7GGL81hBy34uj6meBy5NNxjRkdeoujfr9Wyp6vRC3tRqMLtWGuCt1dfOdpgIMoodM3BRWe4Pjrdt7ytF1f1IBLGInC7f0oSoajdnX4t2K9V02l1VG77stHna-AekNESJvj-jDoWlT4PttKoO6SIrVuRJcCtd4WdJ5OrU3tkWjE0zsiSfenZaSSu1SE7ZQRPZTw2SVdb99-glNt7QgZxK2TE"/>
+</div>
+<div class="p-4 border-t border-[#2b3928] group-hover:bg-[#202b1f] transition-colors">
+<h3 class="text-white font-bold text-lg mb-1 group-hover:text-primary transition-colors">iPhone 15 Pro Max</h3>
+<p class="text-xs text-slate-400 uppercase tracking-wider">Titanium Frame</p>
+</div>
+</a>
+<!-- Card 2 -->
+<a class="group relative bg-[#1a2319] border border-[#2b3928] rounded hover:border-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_-10px_rgba(48,215,15,0.2)]" href="#">
+<div class="aspect-[4/5] w-full p-6 flex items-center justify-center bg-gradient-to-b from-[#222d21] to-[#1a2319]">
+<img alt="iPhone 15 Pro" class="h-full w-auto object-contain mix-blend-overlay opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 filter grayscale group-hover:grayscale-0" data-alt="iPhone 15 Pro back view" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwsTIpGwcJ0QH88OLxt2w_lHXAZLlvu2Kf9xnN1D6TBFAw_YhuAMdtYj5znEqxQ1vje7UXTyChD7TCGDyJAG6rfWOM-jd3PihrP6Y0BcDbFJunCztif81HDnEr0dHfDVvCB9XhAahIJnEo1U1mwK21K4FhtHXZp93ktVGSWONuzV1HCO8864Hj9B82BfQ4Q3uPgm40RE7nNIV4Wsw0OxZwx3M9LG2h0P8znIyH5--0WYdDd3IZq6CDymGNzGqPbW3YaPwphKv_OGc"/>
+</div>
+<div class="p-4 border-t border-[#2b3928] group-hover:bg-[#202b1f] transition-colors">
+<h3 class="text-white font-bold text-lg mb-1 group-hover:text-primary transition-colors">iPhone 15 Pro</h3>
+<p class="text-xs text-slate-400 uppercase tracking-wider">Flagship</p>
+</div>
+</a>
+<!-- Card 3 -->
+<a class="group relative bg-[#1a2319] border border-[#2b3928] rounded hover:border-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_-10px_rgba(48,215,15,0.2)]" href="#">
+<div class="absolute top-3 right-3 z-20">
+<span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-[#2b3928] text-slate-300 uppercase tracking-wide">Best Seller</span>
+</div>
+<div class="aspect-[4/5] w-full p-6 flex items-center justify-center bg-gradient-to-b from-[#222d21] to-[#1a2319]">
+<img alt="iPhone 14 Pro Max" class="h-full w-auto object-contain mix-blend-overlay opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 filter grayscale group-hover:grayscale-0" data-alt="iPhone 14 Pro Max back" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ7ih2t9Ez6i78y-W6anKGo0fnjdxwWtqwq1YPP78cMBTXK_eE1Uq4Q3Z36ltc-McYUdGxRI5W2Dn-6WnLHxKiKuyp1ATxLKhmHANIYWsUuVk0rSmjAKNX4l7xuwa1vEUBAUCPEpWJWPB8NeDMtMacZKqUP5eHAUHUZhapBftWChRc8gdsc9f38-JKXk7ISnD8Rm7NuK6MULDfErtkHDVlaSZFVblcMQh78RUhNAFIxSp-eURTHH0g2ybufVWfEt86GD8mhe_wx5g"/>
+</div>
+<div class="p-4 border-t border-[#2b3928] group-hover:bg-[#202b1f] transition-colors">
+<h3 class="text-white font-bold text-lg mb-1 group-hover:text-primary transition-colors">iPhone 14 Pro Max</h3>
+<p class="text-xs text-slate-400 uppercase tracking-wider">Dynamic Island</p>
+</div>
+</a>
+<!-- Card 4 -->
+<a class="group relative bg-[#1a2319] border border-[#2b3928] rounded hover:border-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_-10px_rgba(48,215,15,0.2)]" href="#">
+<div class="aspect-[4/5] w-full p-6 flex items-center justify-center bg-gradient-to-b from-[#222d21] to-[#1a2319]">
+<img alt="iPhone 14" class="h-full w-auto object-contain mix-blend-overlay opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 filter grayscale group-hover:grayscale-0" data-alt="iPhone 14 standard back" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQWYtDIDIPH55nq8M-T7ZxjuJuP0NsTeZNEDZ61LIX7qFJ2XVyNri40I07S7R2LDwe-ERyJb2nZLAI7j-reLKkB2E6QKd-ufhjA-rcScRB3OpDAiHrDeNqwyGd9Ui1LDBSifE7cDGoe4V4ikMVHCZKZjV-9TI5jK0coF3eRlghqNOK8QE406Ym48ryNQTjGoX-VuenUkX9DG7InFU3VZZN4Oo_u16mKi9RS3PfURZTRpCFdBjJA-CyAHXys66KtJ144-E9nYnaKnI"/>
+</div>
+<div class="p-4 border-t border-[#2b3928] group-hover:bg-[#202b1f] transition-colors">
+<h3 class="text-white font-bold text-lg mb-1 group-hover:text-primary transition-colors">iPhone 14</h3>
+<p class="text-xs text-slate-400 uppercase tracking-wider">Standard Model</p>
+</div>
+</a>
+<!-- Card 5 -->
+<a class="group relative bg-[#1a2319] border border-[#2b3928] rounded hover:border-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_-10px_rgba(48,215,15,0.2)]" href="#">
+<div class="aspect-[4/5] w-full p-6 flex items-center justify-center bg-gradient-to-b from-[#222d21] to-[#1a2319]">
+<img alt="iPhone 13 Pro" class="h-full w-auto object-contain mix-blend-overlay opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 filter grayscale group-hover:grayscale-0" data-alt="iPhone 13 Pro back view" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrNCsZHWFCt3c2oFQG8xEx_wwKKNg7bnmA4iRX5RCZY10EajovuaTDta5B4Ca3ctgqLQRmPJsDZ6D9g5zA6x3qNoIdefXy20mDj4hKd5BTpB7NC5FkINZWRWlQIpHpfEoSM_LgCXse3TxdMIouk3iYaaw-SDRijFLG8585jlY8LlMskX8WaERkfhECJmHI9F1f5e5dfqMD6UPZketvnl4MFSNBbexDt6xTtw02dgAW-c13L3V64W6wmQgcj1id2uKRvTHhi3SOpdI"/>
+</div>
+<div class="p-4 border-t border-[#2b3928] group-hover:bg-[#202b1f] transition-colors">
+<h3 class="text-white font-bold text-lg mb-1 group-hover:text-primary transition-colors">iPhone 13 Pro</h3>
+<p class="text-xs text-slate-400 uppercase tracking-wider">Classic</p>
+</div>
+</a>
+<!-- Card 6 -->
+<a class="group relative bg-[#1a2319] border border-[#2b3928] rounded hover:border-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_-10px_rgba(48,215,15,0.2)]" href="#">
+<div class="aspect-[4/5] w-full p-6 flex items-center justify-center bg-gradient-to-b from-[#222d21] to-[#1a2319]">
+<img alt="iPhone 12 Pro" class="h-full w-auto object-contain mix-blend-overlay opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 filter grayscale group-hover:grayscale-0" data-alt="iPhone 12 Pro back view" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCL93TUJxR5CG9wRfIQEgchS0T_rid3xm6CXh3aeH9udGzSBE1gXVyetSVj8Ecz22oMeqhfpKMeI4Oy2WQUynwIGbrvuf2sjZJ-nxYGFxrHGZBipuSyeVtYGg5PF2yYVOOKrGVGVw1YQpXMkS67QuH5utVakxLiao54g3BsAFQeQLRnO-Mhoa53Q2PijQ3HSyb72NmuZ61nBxKKgtbkN1w48Q7-R6CRjrYjI1c-UGPhpTK0MwN_XwEZIYbwancxMLts2-5PwnKh7JQ"/>
+</div>
+<div class="p-4 border-t border-[#2b3928] group-hover:bg-[#202b1f] transition-colors">
+<h3 class="text-white font-bold text-lg mb-1 group-hover:text-primary transition-colors">iPhone 12 Pro</h3>
+<p class="text-xs text-slate-400 uppercase tracking-wider">Flat Edge</p>
+</div>
+</a>
+<!-- Card 7 -->
+<a class="group relative bg-[#1a2319] border border-[#2b3928] rounded hover:border-primary transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_10px_30px_-10px_rgba(48,215,15,0.2)]" href="#">
+<div class="aspect-[4/5] w-full p-6 flex items-center justify-center bg-gradient-to-b from-[#222d21] to-[#1a2319]">
+<img alt="iPhone 11 Pro" class="h-full w-auto object-contain mix-blend-overlay opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500 filter grayscale group-hover:grayscale-0" data-alt="iPhone 11 Pro back view" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkM9jgiZhsvkgSjEsA8FMiG40g8dgnwPN7B9U14ahfUk5E9TF8WSqY1HVe3200opZJfM7oodifCj5fLyGCCRcFTz8KWCWn__Ngellse7uH7sgBkNYqstSBm7RWxYoWdEfa_9Oaj8KTynlJRYmMwkO9fyIhJ5u4bgNQqKJPHa-3M9sCC1zrqdGM7WvsIz4jDZuMENLOyZTkwqy8ebYGVIVX-J5LCs0hoKidq09rsZbvH_s-zo8-p2Zibjxlw9AFhrJC0b-62rCNPfw"/>
+</div>
+<div class="p-4 border-t border-[#2b3928] group-hover:bg-[#202b1f] transition-colors">
+<h3 class="text-white font-bold text-lg mb-1 group-hover:text-primary transition-colors">iPhone 11 Pro</h3>
+<p class="text-xs text-slate-400 uppercase tracking-wider">Previous Gen</p>
+</div>
+</a>
+<!-- Card 8: Not Found -->
+<a class="group relative bg-[#1a2319] border border-dashed border-[#2b3928] rounded hover:border-primary transition-all duration-300 hover:bg-[#202b1f] flex flex-col justify-center items-center text-center p-6" href="#">
+<div class="rounded-full bg-[#2b3928] group-hover:bg-primary/20 p-4 mb-4 transition-colors">
+<span class="material-symbols-outlined text-3xl text-slate-400 group-hover:text-primary">add</span>
+</div>
+<h3 class="text-white font-bold text-lg mb-1">Custom Request</h3>
+<p class="text-xs text-slate-400 leading-snug px-2">Don't see your device? Submit a request to the lab.</p>
+</a>
+</div>
+<!-- Spacer for fixed bottom bar -->
+<div class="h-40"></div>
+</div>
+<!-- Trending Skins Footer (Fixed/Sticky at bottom of right panel) -->
+<div class="absolute bottom-0 left-0 right-0 bg-surface-darker/95 border-t border-[#2b3928] backdrop-blur-md p-4 z-30">
+<div class="flex items-center gap-4 mb-3">
+<span class="text-xs font-bold text-primary uppercase tracking-[0.2em]">Trending Mutations</span>
+<div class="h-[1px] flex-1 bg-gradient-to-r from-primary/50 to-transparent"></div>
+<div class="flex gap-2">
+<button class="size-6 flex items-center justify-center rounded-full border border-slate-600 hover:border-primary hover:text-primary text-slate-400 transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_left</span>
+</button>
+<button class="size-6 flex items-center justify-center rounded-full border border-slate-600 hover:border-primary hover:text-primary text-slate-400 transition-colors">
+<span class="material-symbols-outlined text-sm">chevron_right</span>
+</button>
+</div>
+</div>
+<div class="flex gap-4 overflow-x-auto pb-2 scrollbar-hide">
+<!-- Skin Item 1 -->
+<a class="flex-shrink-0 w-48 flex items-center gap-3 p-2 rounded hover:bg-[#2b3928] transition-colors group" href="#">
+<div class="size-10 rounded bg-slate-800 overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Abstract green digital camo pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCDdpAogtih02IJqKPUrKSrHMlMTeQ2vg0ozYRN49LvoMn6aig5vHkCv9jbBKrxZFdOzrYvZtLSKTVebE5By1m50jR_1t5NmFH7KACBXIoQdxvEZgyrrp6u4FsGjHttDKssGNPMAlOr0bnTwSRaOanYIz7la2cVvUKiuUzr5ugxar358fFRy9AYjAqEvKAySaK3IpDPs7-0m3Lfh7MgBSzw99gY_9ZnDFRhGRhOYIMP4JIWk7hRw9JqvdH5th-YzS2erv6hk0iaUAc"/>
+</div>
+<div>
+<p class="text-sm font-bold text-white group-hover:text-primary truncate w-32">Cyber Camo</p>
+<p class="text-[10px] text-slate-400">Texture: Matte</p>
+</div>
+</a>
+<!-- Skin Item 2 -->
+<a class="flex-shrink-0 w-48 flex items-center gap-3 p-2 rounded hover:bg-[#2b3928] transition-colors group" href="#">
+<div class="size-10 rounded bg-slate-800 overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Dark carbon fiber texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjGvR2qhVQbx9ywgVugGnFQLez3mtjRl-7xmMP7EINqB9iBXUVOxam13IxHluav4WLDooRXoTXkaDlJ6ZCRrlBYz-4l1OfL3Mux8mddJfIvpnswZVNxajRrEwxow6McoKHvOtwghVRfngb0MAiwguAW_3mwihMGtwAJOluMidlis_1u-k5jUQpHXA7SmToWZvZl-0wtckfYR6ACG2IQjfAwlVFvTh7VlAmgrpfXwYsAfJc4MPGuSipqQ-WaX7jlVCt4OJeAwL78rc"/>
+</div>
+<div>
+<p class="text-sm font-bold text-white group-hover:text-primary truncate w-32">Obsidian Carbon</p>
+<p class="text-[10px] text-slate-400">Texture: 3D Weave</p>
+</div>
+</a>
+<!-- Skin Item 3 -->
+<a class="flex-shrink-0 w-48 flex items-center gap-3 p-2 rounded hover:bg-[#2b3928] transition-colors group" href="#">
+<div class="size-10 rounded bg-slate-800 overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Toxic green slime texture" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsC_KeCM_NfjDnTgMfwX2-gFqff5C1A9ttiBS9h3jq6gGipNFENHMfNF0aqgXp48WRXjWPuG2WTRSgrVJQHG04mCJh1R1sIjTnS2nuChBEOIXfz5n8EZBzukPxV_VIA7HQ3obF2PwjY0TiCa-FrpFXPkONDFM_8txyeUnUP8PbV6FUOM9PW-v8vFfx6WSaAXpLKthtjWoH22l9ZRKyXNqUx1AtiohveoSuYPbKyBzXCtATX-ZVpipWmQqmyxnQi5NcOQ-K34p4crM"/>
+</div>
+<div>
+<p class="text-sm font-bold text-white group-hover:text-primary truncate w-32">Toxic Sludge</p>
+<p class="text-[10px] text-slate-400">Texture: Glossy</p>
+</div>
+</a>
+<!-- Skin Item 4 -->
+<a class="flex-shrink-0 w-48 flex items-center gap-3 p-2 rounded hover:bg-[#2b3928] transition-colors group" href="#">
+<div class="size-10 rounded bg-slate-800 overflow-hidden relative">
+<img class="w-full h-full object-cover" data-alt="Orange hexagon pattern" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD9Ap9D5nq6Ccg-d940FbrcrrfPJr7YkAx_EhIkUVq3N6H7WJy3LpefpTWL-bsomLiHImuQDq2Wm5hJ6KFvyh_V_6xKwom9EjZ7t_kze7ZuhIzY0-0dqRNzsv9lS0XPtwuxtI6ug9UbkkOXddXIThphZTcP-2I2vjIdSkhnC3Qez4AtWPyEoMt-nVrbcOIcwhXPsHVIinCCuAI48g1sp-k9FVao43yoFZNK8GHULziP7IwNdGzLxzahN0ryGVSA7D-1tkALrJcNHc8"/>
+</div>
+<div>
+<p class="text-sm font-bold text-white group-hover:text-primary truncate w-32">Solar Hive</p>
+<p class="text-[10px] text-slate-400">Texture: Honeycomb</p>
+</div>
+</a>
+</div>
+</div>
+</section>
+</main>
+</body></html>

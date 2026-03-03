@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>REPTREX Hatchery Device Selection</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#30d70f",
+                        "primary-dark": "#23a30a",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#121811",
+                        "surface-dark": "#1d271c",
+                        "border-dark": "#2b3928",
+                        "text-muted": "#a1b99d",
+                    },
+                    fontFamily: {
+                        display: ["Space Grotesk", "sans-serif"],
+                        body: ["Space Grotesk", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.125rem",
+                        lg: "0.25rem",
+                        xl: "0.5rem",
+                        full: "9999px",
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom Hexagon Clip Path for Category Images if needed, though sharp squares fit the industrial theme well */
+        .clip-cut-corner {
+            clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100 antialiased overflow-x-hidden">
+<div class="relative flex h-auto min-h-screen w-full flex-col group/design-root">
+<div class="layout-container flex h-full grow flex-col">
+<!-- Navbar -->
+<header class="sticky top-0 z-50 flex items-center justify-between whitespace-nowrap border-b border-solid border-border-dark bg-background-dark/95 backdrop-blur-md px-6 py-4 lg:px-10">
+<div class="flex items-center gap-4 text-white">
+<div class="size-8 text-primary">
+<span class="material-symbols-outlined !text-3xl">token</span>
+</div>
+<h2 class="text-white text-xl font-bold leading-tight tracking-wider uppercase">REPTREX</h2>
+</div>
+<!-- Desktop Nav -->
+<div class="hidden md:flex flex-1 justify-end gap-8 items-center">
+<div class="flex items-center gap-9">
+<a class="text-text-muted hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest" href="#">Vault</a>
+<a class="text-primary text-sm font-bold uppercase tracking-widest border-b-2 border-primary pb-0.5" href="#">Hatchery</a>
+<a class="text-text-muted hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest" href="#">Support</a>
+<a class="text-text-muted hover:text-primary transition-colors text-sm font-medium uppercase tracking-widest" href="#">Cart</a>
+</div>
+<button class="flex min-w-[120px] cursor-pointer items-center justify-center overflow-hidden rounded-none clip-cut-corner h-10 px-6 bg-primary hover:bg-primary-dark transition-colors text-background-dark text-sm font-bold leading-normal tracking-wide uppercase">
+<span class="truncate">Login / Sign Up</span>
+</button>
+</div>
+<!-- Mobile Menu Icon -->
+<div class="md:hidden text-white">
+<span class="material-symbols-outlined">menu</span>
+</div>
+</header>
+<main class="flex flex-1 flex-col items-center">
+<div class="w-full max-w-[1280px] px-4 md:px-10 flex flex-col gap-10 py-10">
+<!-- Hero Section -->
+<div class="relative w-full overflow-hidden rounded-lg border border-border-dark bg-surface-dark/50">
+<!-- Decorative Industrial Grid Background -->
+<div class="absolute inset-0 z-0 opacity-10" style="background-image: linear-gradient(#30d70f 1px, transparent 1px), linear-gradient(90deg, #30d70f 1px, transparent 1px); background-size: 40px 40px;">
+</div>
+<div class="relative z-10 flex min-h-[480px] flex-col gap-6 md:gap-8 items-center justify-center p-6 text-center">
+<div class="flex flex-col gap-3 max-w-2xl">
+<div class="inline-flex items-center justify-center gap-2 text-primary text-xs font-bold tracking-[0.2em] uppercase mb-2">
+<span class="size-2 rounded-full bg-primary animate-pulse"></span>
+                                    System Online
+                                </div>
+<h1 class="text-white text-4xl md:text-6xl font-black leading-tight tracking-tight uppercase">
+                                    Enter The <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-green-600">Hatchery</span>
+</h1>
+<h2 class="text-text-muted text-base md:text-lg font-normal leading-relaxed max-w-lg mx-auto">
+                                    Initialize calibration sequence. Select your chassis model to begin the skin generation process.
+                                </h2>
+</div>
+<!-- Search Bar -->
+<label class="flex flex-col w-full max-w-[560px] h-14 md:h-16 mt-4 group">
+<div class="flex w-full flex-1 items-stretch rounded-none clip-cut-corner bg-surface-dark border border-border-dark group-hover:border-primary transition-colors h-full overflow-hidden relative">
+<div class="text-text-muted flex items-center justify-center pl-4 md:pl-6">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="flex w-full min-w-0 flex-1 resize-none bg-transparent text-white focus:outline-0 focus:ring-0 border-none h-full placeholder:text-text-muted/50 px-4 text-base md:text-lg font-medium" placeholder="Search device model (e.g. iPhone 15 Pro Max)" value=""/>
+<div class="flex items-center justify-center pr-2">
+<button class="flex items-center justify-center h-10 md:h-12 px-6 bg-primary hover:bg-white text-background-dark transition-all text-sm font-bold tracking-wider uppercase clip-cut-corner">
+<span>Scan</span>
+</button>
+</div>
+</div>
+</label>
+<!-- Tech Specs / Decor -->
+<div class="flex gap-8 mt-8 text-xs text-text-muted/40 font-mono tracking-widest uppercase">
+<div>Latency: 12ms</div>
+<div>Grid: Active</div>
+<div>Secure: True</div>
+</div>
+</div>
+</div>
+<!-- Categories Section -->
+<div class="flex flex-col gap-6 w-full">
+<div class="flex items-end justify-between border-b border-border-dark pb-4">
+<h2 class="text-white text-2xl font-bold leading-tight tracking-wide uppercase flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">category</span>
+                                Select Manufacturer
+                            </h2>
+<a class="text-primary text-sm font-bold uppercase tracking-wider hover:text-white transition-colors" href="#">View All Systems &gt;</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Card 1: Apple -->
+<a class="group flex flex-col gap-4 bg-surface-dark border border-border-dark p-4 hover:border-primary/50 transition-all hover:bg-surface-dark/80 relative overflow-hidden rounded-sm" href="#">
+<div class="absolute top-0 right-0 p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary">arrow_outward</span>
+</div>
+<div class="w-full aspect-[4/3] bg-background-dark rounded-sm overflow-hidden relative border border-white/5 group-hover:border-primary/20 transition-colors">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Modern sleek iphone on dark surface" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDuAfnta4N0zjUSpeNRbyj2jZ1dBFyjjI5u9Ut9D6wAqeCw_rHttV1topy0j4rS5Gcz6pqvaOxyR0FMv2T-CPCytnz8qvKWUM_Mc9AMjVij_p7URK5UmRWhUWnvwKjvkvOyX1LCZ2p0R46pw_N6eWFBdnC-Y2Sn_4PfYdv3vPjnUndTUy84ozQFe9b1_n6NImj7Yarle_8HUNgqd5yz7bm32vuIUeB6inohfi4i-GF0QzLgJFZbAvdMv_YNNbG0AE3dqb_K74cIgOI");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dark via-transparent to-transparent opacity-60"></div>
+</div>
+<div>
+<p class="text-white text-lg font-bold uppercase tracking-wide group-hover:text-primary transition-colors">Apple</p>
+<p class="text-text-muted text-sm font-normal mt-1">iPhone, iPad, MacBook, Airpods</p>
+</div>
+</a>
+<!-- Card 2: Samsung -->
+<a class="group flex flex-col gap-4 bg-surface-dark border border-border-dark p-4 hover:border-primary/50 transition-all hover:bg-surface-dark/80 relative overflow-hidden rounded-sm" href="#">
+<div class="absolute top-0 right-0 p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary">arrow_outward</span>
+</div>
+<div class="w-full aspect-[4/3] bg-background-dark rounded-sm overflow-hidden relative border border-white/5 group-hover:border-primary/20 transition-colors">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Samsung Galaxy phone back view dark theme" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDuMkmoVZRBxT_eZpY_D74c2k6T4FfUXGxK3f1Eu_mjS3ejh5Y-qd4adpReEaTDrOoS9NhzSCmxk70vdv8ILaGEl6WjkzC8p-Hk3xcMbHWx3G9ximgzpxX-Y8LpprEWUqgjDkjLsg-Xg6mcd0Ft-m_vpANGm8bRWW9rxWJQuPK2YUTfH77pLwZ29aSeXQT_SXq9lcjhhuqsgd6dQTuuPFqB36_1djW9_ZP62uG-aPJMj0QMyRtfiLmHFcsNpG_VslTEcS-E9ceSlw8");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dark via-transparent to-transparent opacity-60"></div>
+</div>
+<div>
+<p class="text-white text-lg font-bold uppercase tracking-wide group-hover:text-primary transition-colors">Samsung</p>
+<p class="text-text-muted text-sm font-normal mt-1">Galaxy S Series, Fold, Flip</p>
+</div>
+</a>
+<!-- Card 3: Google -->
+<a class="group flex flex-col gap-4 bg-surface-dark border border-border-dark p-4 hover:border-primary/50 transition-all hover:bg-surface-dark/80 relative overflow-hidden rounded-sm" href="#">
+<div class="absolute top-0 right-0 p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary">arrow_outward</span>
+</div>
+<div class="w-full aspect-[4/3] bg-background-dark rounded-sm overflow-hidden relative border border-white/5 group-hover:border-primary/20 transition-colors">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Google Pixel phone on textured background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuA5G3p8pUTYDk0bEz_Dd9ylOycmY2_5p2t4eoXk760qzPLswq_Ve1IdIvph3WvF392EBjytYXCHYUyQXmOs69Cai3nnYPuYjh4xVswbH5nnf4Il46iDoFAYi9b7TfAkEwO5VoLKRO-gj4dOJ4D6sNKDqo6rT5dK2zH5JyowWIXiiTZDleRcR7piRMfZAFAFGIodnWYE7wU7MyRuh8uNdjrhBZ4vzpjNYDQKV67HgQxQqR2ZF-d1z4ci8V_YXYuHVMg6aqvxYVUMUjw");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dark via-transparent to-transparent opacity-60"></div>
+</div>
+<div>
+<p class="text-white text-lg font-bold uppercase tracking-wide group-hover:text-primary transition-colors">Google</p>
+<p class="text-text-muted text-sm font-normal mt-1">Pixel Phones, Pixel Slate</p>
+</div>
+</a>
+<!-- Card 4: Gaming -->
+<a class="group flex flex-col gap-4 bg-surface-dark border border-border-dark p-4 hover:border-primary/50 transition-all hover:bg-surface-dark/80 relative overflow-hidden rounded-sm" href="#">
+<div class="absolute top-0 right-0 p-2 opacity-0 group-hover:opacity-100 transition-opacity">
+<span class="material-symbols-outlined text-primary">arrow_outward</span>
+</div>
+<div class="w-full aspect-[4/3] bg-background-dark rounded-sm overflow-hidden relative border border-white/5 group-hover:border-primary/20 transition-colors">
+<div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-105" data-alt="Playstation 5 controller dark lighting" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAbNBm1kuNM7SHh53OPxZDnq5vj2F5UTvF2Hge71ZNMei0VhcR_D2xIsB9Aej1Nfwa2XFX6wseW9YoqE6Xx-kgS2nV1mRZDsCuqXyO1gfGgppEa5_MtY0h26mgxxCSgHA7wQFxldlEvMNR6Paho1zAslDSycZGuo9nFeZ9pQhXFABCLgl61L7VKmUQ0fYErjODg78v8v-D2BH4e4lThr83ieRojJQ-9RtyQLjlzZjjCp5OxQnUaz4I0VlqaX5W2rXVq1NriUkAoUmo");'>
+</div>
+<div class="absolute inset-0 bg-gradient-to-t from-surface-dark via-transparent to-transparent opacity-60"></div>
+</div>
+<div>
+<p class="text-white text-lg font-bold uppercase tracking-wide group-hover:text-primary transition-colors">Gaming Consoles</p>
+<p class="text-text-muted text-sm font-normal mt-1">PlayStation, Xbox, Switch, Steam Deck</p>
+</div>
+</a>
+</div>
+</div>
+<!-- Recent/Popular Models Mini Section -->
+<div class="w-full pt-6">
+<div class="flex items-center gap-4 mb-6">
+<div class="h-px bg-border-dark flex-1"></div>
+<h3 class="text-text-muted text-sm font-bold uppercase tracking-widest">Trending Blueprints</h3>
+<div class="h-px bg-border-dark flex-1"></div>
+</div>
+<div class="flex flex-wrap justify-center gap-3">
+<button class="px-4 py-2 bg-surface-dark border border-border-dark rounded-full text-text-muted text-xs hover:text-primary hover:border-primary transition-colors">iPhone 15 Pro</button>
+<button class="px-4 py-2 bg-surface-dark border border-border-dark rounded-full text-text-muted text-xs hover:text-primary hover:border-primary transition-colors">Samsung S24 Ultra</button>
+<button class="px-4 py-2 bg-surface-dark border border-border-dark rounded-full text-text-muted text-xs hover:text-primary hover:border-primary transition-colors">MacBook Air M2</button>
+<button class="px-4 py-2 bg-surface-dark border border-border-dark rounded-full text-text-muted text-xs hover:text-primary hover:border-primary transition-colors">PS5 Slim</button>
+<button class="px-4 py-2 bg-surface-dark border border-border-dark rounded-full text-text-muted text-xs hover:text-primary hover:border-primary transition-colors">Steam Deck OLED</button>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="flex flex-col gap-10 px-6 py-12 text-center border-t border-border-dark bg-surface-dark/30 mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center max-w-[1280px] w-full mx-auto gap-8">
+<div class="flex flex-col items-center md:items-start gap-2">
+<div class="flex items-center gap-2 text-white">
+<span class="material-symbols-outlined text-primary">token</span>
+<span class="font-bold tracking-widest text-lg">REPTREX</span>
+</div>
+<p class="text-text-muted text-xs max-w-xs text-center md:text-left">
+                            Advanced lamination and protection systems for next-generation hardware.
+                        </p>
+</div>
+<div class="flex flex-wrap items-center justify-center gap-8">
+<a class="text-text-muted hover:text-primary text-sm font-medium tracking-wide transition-colors" href="#">Privacy Protocol</a>
+<a class="text-text-muted hover:text-primary text-sm font-medium tracking-wide transition-colors" href="#">Terms of Engagement</a>
+<a class="text-text-muted hover:text-primary text-sm font-medium tracking-wide transition-colors" href="#">Support Ticket</a>
+</div>
+<div class="flex flex-wrap justify-center gap-4">
+<a class="size-10 flex items-center justify-center rounded bg-background-dark text-text-muted hover:text-primary hover:bg-background-dark/80 transition-all border border-border-dark" href="#">
+<svg aria-hidden="true" class="size-5" fill="currentColor" viewbox="0 0 24 24">
+<path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84"></path>
+</svg>
+</a>
+<a class="size-10 flex items-center justify-center rounded bg-background-dark text-text-muted hover:text-primary hover:bg-background-dark/80 transition-all border border-border-dark" href="#">
+<svg aria-hidden="true" class="size-5" fill="currentColor" viewbox="0 0 24 24">
+<path clip-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772 4.902 4.902 0 011.772-1.153c.636-.247 1.363-.416 2.427-.465 1.067-.047 1.409-.06 3.809-.06h.63zm1.676 5.296h-1.647c-1.996 0-3.604 1.607-3.604 3.604 0 1.996 1.608 3.604 3.604 3.604 1.996 0 3.604-1.608 3.604-3.604 0-1.996-1.608-3.604-3.604-3.604zm-8.632 3.604c0 3.844 3.12 6.964 6.964 6.964 3.844 0 6.964-3.12 6.964-6.964 0-3.844-3.12-6.964-6.964-6.964-3.844 0-6.964 3.12-6.964 6.964zm13.352-6.096c-.636 0-1.152.516-1.152 1.152 0 .636.516 1.152 1.152 1.152.636 0 1.152-.516 1.152-1.152 0-.636-.516-1.152-1.152-1.152z" fill-rule="evenodd"></path>
+</svg>
+</a>
+<a class="size-10 flex items-center justify-center rounded bg-background-dark text-text-muted hover:text-primary hover:bg-background-dark/80 transition-all border border-border-dark" href="#">
+<span class="material-symbols-outlined text-xl">chat</span>
+</a>
+</div>
+</div>
+<div class="text-[#a1b99d]/60 text-xs font-mono">
+                    © 2024 REPTREX Industries. All systems operational.
+                </div>
+</footer>
+</div>
+</div>
+</body></html>

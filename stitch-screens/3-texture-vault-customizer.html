@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>REPTREX Texture Vault Customizer</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Noto+Sans:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#30d70f",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#132210",
+                        // Custom palette derived from primary hue (approx 110 degrees)
+                        "neutral-900": "#0a1209", 
+                        "neutral-800": "#121811", // Darker background
+                        "neutral-700": "#2b3928", // Borders/Inputs
+                        "neutral-600": "#3f543b", // Borders/Separators
+                        "neutral-500": "#587053", 
+                        "neutral-400": "#a1b99d", // Muted text
+                        "neutral-300": "#c5d6c2",
+                        "neutral-100": "#eef2ed", // Light text
+                    },
+                    fontFamily: {
+                        "display": ["Space Grotesk", "sans-serif"],
+                        "body": ["Noto Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.125rem", 
+                        "lg": "0.25rem", 
+                        "xl": "0.5rem", 
+                        "full": "0.75rem"
+                    },
+                    backgroundImage: {
+                        'hex-pattern': "url(\"data:image/svg+xml,%3Csvg width='24' height='40' viewBox='0 0 24 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 40c5.523 0 10-4.477 10-10V10c0-5.523-4.477-10-10-10S-10 4.477-10 10v20c0 5.523 4.477 10 10 10z' fill='%2330d70f' fill-opacity='0.03' fill-rule='evenodd'/%3E%3C/svg%3E\")",
+                    }
+                },
+            },
+        }
+    </script>
+<style>
+        /* Hexagon Clip Path Utility */
+        .clip-hex {
+            clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        }
+        
+        /* Custom Scrollbar for the dark theme */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #121811; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #2b3928; 
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #3f543b; 
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark min-h-screen flex flex-col font-display selection:bg-primary selection:text-neutral-900 overflow-hidden">
+<!-- Header -->
+<header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-neutral-700 bg-neutral-800 px-6 py-3 z-20 shrink-0">
+<div class="flex items-center gap-8">
+<div class="flex items-center gap-4 text-slate-100">
+<div class="size-6 text-primary">
+<span class="material-symbols-outlined !text-2xl">diamond</span>
+</div>
+<h2 class="text-slate-100 text-xl font-bold leading-tight tracking-[-0.015em]">REPTREX</h2>
+</div>
+<nav class="hidden md:flex items-center gap-9">
+<a class="text-neutral-300 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Vault</a>
+<a class="text-neutral-300 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Devices</a>
+<a class="text-neutral-300 hover:text-primary transition-colors text-sm font-medium leading-normal" href="#">Support</a>
+</nav>
+</div>
+<div class="flex items-center justify-end gap-6">
+<label class="hidden lg:flex flex-col min-w-40 !h-10 max-w-64 group">
+<div class="flex w-full flex-1 items-stretch rounded h-full bg-neutral-700 focus-within:ring-1 focus-within:ring-primary transition-all">
+<div class="text-neutral-400 flex border-none items-center justify-center pl-4 rounded-l border-r-0">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded bg-transparent text-slate-100 focus:outline-0 focus:ring-0 border-none h-full placeholder:text-neutral-400 px-4 rounded-l-none border-l-0 pl-2 text-sm font-normal leading-normal" placeholder="Search Device..." value=""/>
+</div>
+</label>
+<div class="relative">
+<a class="text-neutral-300 hover:text-primary transition-colors" href="#">
+<span class="material-symbols-outlined">shopping_cart</span>
+</a>
+<div class="absolute -top-1 -right-1 h-3 w-3 bg-primary rounded-full border border-neutral-800"></div>
+</div>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded h-9 px-4 bg-primary text-neutral-900 hover:bg-green-400 transition-colors text-sm font-bold leading-normal tracking-[0.015em]">
+<span class="truncate">Log In</span>
+</button>
+</div>
+</header>
+<!-- Main Content Area: Split View -->
+<main class="flex-1 flex flex-col lg:flex-row h-[calc(100vh-65px)] overflow-hidden">
+<!-- Left: 3D Visualization Area -->
+<section class="relative w-full lg:w-3/5 xl:w-2/3 bg-neutral-900 flex items-center justify-center overflow-hidden group">
+<!-- Background Elements -->
+<div class="absolute inset-0 bg-hex-pattern opacity-20 pointer-events-none"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-neutral-900 via-transparent to-neutral-900/50 pointer-events-none z-10"></div>
+<!-- Breadcrumbs Overlay -->
+<div class="absolute top-6 left-6 z-20 flex flex-wrap gap-2">
+<a class="text-neutral-400 hover:text-white text-sm font-medium" href="#">Devices</a>
+<span class="text-neutral-600 text-sm font-medium">/</span>
+<span class="text-primary text-sm font-medium">iPhone 15 Pro Max</span>
+</div>
+<!-- Main Product Image -->
+<div class="relative z-10 w-full max-w-lg aspect-[9/16] lg:aspect-auto h-[60vh] lg:h-[80vh] transition-transform duration-700 ease-out transform group-hover:scale-105">
+<!-- Using a placeholder that represents a 3D Phone Render -->
+<div class="w-full h-full bg-center bg-contain bg-no-repeat" data-alt="3D render of iPhone 15 Pro Max with Forged Carbon texture skin" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAyWgxAWeSbiuVnM-CLNa5c7xm4Rd9wOCN8rCRL1XVASxBZmgbFSxEimuTHyKxj80Zwa8YD9WPj0T-y2CD5Dt8Qn_qoLt6qvnWkcyfJN9sl08vuE6QupCmg01mzaK6XxG4TGEh6XHgpYllU34yuZ6E4lOPp910taqiOfScVHAswB7DaA_30GAAfn6HI_iw4bSIpsfnjLBnkmXhox68aDJVAoGDctS4nHGIYHXdsTUbxVMxdRIf-fdmPZbt45XAEZzmwEM6W9BKqCaY');">
+</div>
+<!-- Interaction Hotspots -->
+<div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-full h-1/2 pointer-events-none">
+<div class="absolute top-[10%] right-[20%]">
+<div class="h-3 w-3 bg-primary rounded-full animate-ping absolute"></div>
+<div class="h-3 w-3 bg-primary rounded-full relative shadow-[0_0_15px_#30d70f]"></div>
+<div class="absolute left-6 top-1/2 -translate-y-1/2 bg-neutral-800/90 backdrop-blur border border-neutral-600 px-3 py-1 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+<span class="text-xs text-white font-mono">Forged Texture</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Lighting Effect Overlay -->
+<div class="absolute inset-0 bg-gradient-to-tr from-primary/5 to-transparent mix-blend-overlay pointer-events-none"></div>
+</section>
+<!-- Right: Configuration Panel -->
+<aside class="w-full lg:w-2/5 xl:w-1/3 bg-neutral-800 border-l border-neutral-700 flex flex-col h-full z-20 shadow-2xl">
+<!-- Config Header -->
+<div class="px-6 py-6 border-b border-neutral-700 bg-neutral-800 shrink-0">
+<div class="flex justify-between items-start mb-2">
+<div>
+<h1 class="text-3xl font-bold text-slate-100 tracking-tight">Forged Carbon</h1>
+<p class="text-neutral-400 text-sm mt-1">Series: Apex • Matte Finish</p>
+</div>
+<div class="text-right">
+<span class="block text-2xl font-bold text-primary">$24.95</span>
+<span class="text-xs text-neutral-500 line-through">$39.00</span>
+</div>
+</div>
+</div>
+<!-- Scrollable Content -->
+<div class="flex-1 overflow-y-auto p-6 space-y-8">
+<!-- Category Selector -->
+<div class="space-y-4">
+<div class="flex items-center justify-between">
+<h3 class="text-sm font-bold text-slate-100 uppercase tracking-wider flex items-center gap-2">
+<span class="w-1 h-4 bg-primary rounded-sm"></span> Step 1: Select Texture
+                        </h3>
+</div>
+<!-- Tabs -->
+<div class="flex border-b border-neutral-600 gap-8 mb-4">
+<button class="relative pb-3 text-neutral-400 hover:text-white transition-colors text-sm font-medium group">
+                            Primitive
+                            <span class="absolute bottom-0 left-0 w-full h-[2px] bg-transparent group-hover:bg-neutral-500 transition-colors"></span>
+</button>
+<button class="relative pb-3 text-white text-sm font-bold">
+                            Apex
+                            <span class="absolute bottom-0 left-0 w-full h-[2px] bg-white shadow-[0_-2px_8px_rgba(255,255,255,0.4)]"></span>
+</button>
+<button class="relative pb-3 text-neutral-400 hover:text-white transition-colors text-sm font-medium group">
+                            Camo
+                            <span class="absolute bottom-0 left-0 w-full h-[2px] bg-transparent group-hover:bg-neutral-500 transition-colors"></span>
+</button>
+</div>
+<!-- Swatches Grid -->
+<div class="grid grid-cols-4 gap-4">
+<!-- Swatch 1 (Active) -->
+<div class="flex flex-col items-center gap-2 cursor-pointer group">
+<div class="w-16 h-16 clip-hex bg-neutral-700 relative flex items-center justify-center transition-transform group-hover:scale-110 ring-2 ring-primary ring-offset-2 ring-offset-neutral-800">
+<div class="absolute inset-0 bg-cover bg-center opacity-80" data-alt="Dark carbon fiber texture pattern" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuB8_NNKoy8rvgqhxMUM0Ny-LWF6P73iMJpzlO3hd_ZI4KkaispZLlLk5FRqRuxUIVBOs6SRfQIRn9kFFiU55n_OiTCY1V5XpfUbR8DjlNnOuCRa3ghu8JRoZgRUUCxDLZXxmgAXNWrnr4IuaMnzimWUR6cOVtRDb9NI7joqE1oFfqQ_rtb5mU60Dtm6iiEZzfMzv9rPaCjkv27a2hRxd0FCfs1LR_T7pjthtEBfoCnFGKhxYo7vgu3CibWJ0cdQqjwxF7VkJWl6Z4w')"></div>
+<span class="material-symbols-outlined text-white z-10 drop-shadow-md">check</span>
+</div>
+<span class="text-xs text-primary font-medium text-center">Forged</span>
+</div>
+<!-- Swatch 2 -->
+<div class="flex flex-col items-center gap-2 cursor-pointer group">
+<div class="w-16 h-16 clip-hex bg-neutral-700 relative flex items-center justify-center transition-transform group-hover:scale-110 hover:brightness-110">
+<div class="absolute inset-0 bg-cover bg-center opacity-60" data-alt="Black matrix texture pattern" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuD1GZu-2KQf4v7B-zt5_itvfOg1qaYHEDl59FRF08KXqY8v2hAi_GGR-nBcX9fYda-cBQriYJ0JbvvdVZXdmqUVvOGUqHTkmfyvMWhMs-d-yQEhhaCpNP7KziUhyDypq1SYTTgnRpUlFD3Mw0qkkzk57nQble8T0VlLHBfN0qdvVRuSFCdTSlK5lY83jodmWiZKg96ONyPgXcOTJBhLPTvQYWelStHWHT3aJjDwZ5nxbEnxX8U7ORM8AOGPF0CMwlo3qii4jbEiDIg')"></div>
+</div>
+<span class="text-xs text-neutral-400 text-center group-hover:text-white">Matrix</span>
+</div>
+<!-- Swatch 3 -->
+<div class="flex flex-col items-center gap-2 cursor-pointer group">
+<div class="w-16 h-16 clip-hex bg-neutral-700 relative flex items-center justify-center transition-transform group-hover:scale-110 hover:brightness-110">
+<div class="absolute inset-0 bg-cover bg-center opacity-60" data-alt="Dark leather texture pattern" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDx0-yPiUZodlPFgDEtuSZWaNy1TmjlPPF34jjshYRMbHMFhamkELHixnBsh39dCaqW1VR8oydmtNlvxPKHnuvQR2kmctCfweRhyewFFPvrZMRsgsy_VB1Pwz88sE69e9IKzizLRmkReFarfs5CCTSDo9j3MVWvW1Q89S-GS5ufDldZHnKBS9RsRaffihvs7jCJIXXHFBvKG67b7LubEt6MvVpTLEfE-I4ZZw8sgdvJtSmHRqBtxg2GQCS_C82yQTfvsV0MA8DRuFM')"></div>
+</div>
+<span class="text-xs text-neutral-400 text-center group-hover:text-white">Obsidian</span>
+</div>
+<!-- Swatch 4 -->
+<div class="flex flex-col items-center gap-2 cursor-pointer group">
+<div class="w-16 h-16 clip-hex bg-neutral-700 relative flex items-center justify-center transition-transform group-hover:scale-110 hover:brightness-110">
+<div class="absolute inset-0 bg-cover bg-center opacity-60" data-alt="Cyber grid texture pattern" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCYxD9Ggreaht-Rq5KrUGnN4hhhvdDPFOJsjVPEh5cF6WS1r2p1bnDxT0uYPAa-o-LJ23Ex4VaOXTsDxyKPpw-SDrWEA3U4Lxa6QTOesV3lMsJAGvv9NEE2jcHdnhEouf6wUmAgU5tslnaPvtNGFk6faMFX0nsTMdALNx-R2RC1s5XdWVEqJ9UASbHdkmDQiFVJZf31ZQ_fHFlA2_xUYmvO0NimtudGXjr1c6gHrXOao032D_iINucS4Ud27jvKKqfp5_wo48V0Wr8')"></div>
+</div>
+<span class="text-xs text-neutral-400 text-center group-hover:text-white">Cyber</span>
+</div>
+</div>
+</div>
+<!-- Add-ons Section -->
+<div class="space-y-4 pt-4 border-t border-neutral-700/50">
+<h3 class="text-sm font-bold text-slate-100 uppercase tracking-wider flex items-center gap-2">
+<span class="w-1 h-4 bg-primary/50 rounded-sm"></span> Step 2: Add-ons
+                    </h3>
+<label class="flex items-center justify-between p-4 rounded-lg bg-neutral-700/30 border border-neutral-700 cursor-pointer hover:bg-neutral-700/50 hover:border-neutral-500 transition-all group">
+<div class="flex items-center gap-4">
+<div class="h-10 w-10 bg-neutral-800 rounded flex items-center justify-center text-primary border border-neutral-600">
+<span class="material-symbols-outlined">lens_blur</span>
+</div>
+<div>
+<p class="text-slate-100 font-bold text-sm">Lens Shield Pro</p>
+<p class="text-neutral-400 text-xs">Tempered Glass Protection</p>
+</div>
+</div>
+<div class="flex items-center gap-3">
+<span class="text-sm font-medium text-slate-100">+$12.00</span>
+<div class="relative w-10 h-6 rounded-full bg-neutral-900 transition-colors group-hover:bg-neutral-900/80">
+<input class="peer sr-only" type="checkbox"/>
+<div class="absolute left-1 top-1 w-4 h-4 rounded-full bg-neutral-500 peer-checked:bg-primary peer-checked:translate-x-4 transition-all"></div>
+</div>
+</div>
+</label>
+</div>
+<!-- Specs/Stats -->
+<div class="space-y-4 pt-4 border-t border-neutral-700/50">
+<h3 class="text-xs font-bold text-neutral-500 uppercase tracking-widest mb-3">Material Stats</h3>
+<div class="space-y-3">
+<div>
+<div class="flex justify-between text-xs mb-1">
+<span class="text-neutral-300">Scratch Resistance</span>
+<span class="text-primary font-mono">98%</span>
+</div>
+<div class="h-1.5 w-full bg-neutral-900 rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary/40 to-primary w-[98%] rounded-full"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs mb-1">
+<span class="text-neutral-300">Grip Level</span>
+<span class="text-primary font-mono">High</span>
+</div>
+<div class="h-1.5 w-full bg-neutral-900 rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary/40 to-primary w-[75%] rounded-full"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between text-xs mb-1">
+<span class="text-neutral-300">Thickness</span>
+<span class="text-primary font-mono">0.22mm</span>
+</div>
+<div class="h-1.5 w-full bg-neutral-900 rounded-full overflow-hidden">
+<div class="h-full bg-gradient-to-r from-primary/40 to-primary w-[20%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Spacer for scrolling -->
+<div class="h-20"></div>
+</div>
+<!-- Footer / CTA -->
+<div class="border-t border-neutral-700 bg-neutral-800 p-6 z-30 shrink-0">
+<div class="flex items-center justify-between mb-4 text-xs text-neutral-400">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">verified</span> Lifetime Warranty</span>
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-base">local_shipping</span> Free Shipping</span>
+</div>
+<button class="w-full relative group overflow-hidden rounded bg-primary py-4 px-6 flex items-center justify-center gap-2 transition-all hover:shadow-[0_0_20px_rgba(48,215,15,0.4)]">
+<div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+<span class="material-symbols-outlined text-neutral-900 font-bold transition-transform group-hover:rotate-12">shopping_bag</span>
+<span class="text-neutral-900 font-display font-bold text-lg uppercase tracking-wide relative z-10">Engage Lamination</span>
+</button>
+</div>
+</aside>
+</main>
+</body></html>
